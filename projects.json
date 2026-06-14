@@ -23,7 +23,13 @@
             "계류 의안·처리 법률안 추적, 본회의 표결 결과를 의원별 명단으로 확인",
             "위원회·국회 일정과 핵심 지표 대시보드"
           ],
-          "stack": ["Nuxt 4 (SSR)", "Tailwind CSS v4", "shadcn-vue", "Cloudflare Workers/KV", "국회사무처 Open API"],
+          "stack": [
+            "Nuxt 4 (SSR)",
+            "Tailwind CSS v4",
+            "shadcn-vue",
+            "Cloudflare Workers/KV",
+            "국회사무처 Open API"
+          ],
           "learn": [
             "공개 API 데이터로 대시보드를 만드는 흐름",
             "3단 엣지 캐싱 (HTML → API → KV) 으로 빠르게 보여주기"
@@ -41,7 +47,14 @@
             "국민연금 지분공시 순매수 랭킹과 연속 매수/매도 신호",
             "⌘K 커맨드 팔레트로 빠른 이동, 즐겨찾기 저장"
           ],
-          "stack": ["Svelte 5", "Vite", "Tailwind CSS v4", "shadcn-svelte", "Cloudflare Pages Functions", "OpenDART API"],
+          "stack": [
+            "Svelte 5",
+            "Vite",
+            "Tailwind CSS v4",
+            "shadcn-svelte",
+            "Cloudflare Pages Functions",
+            "OpenDART API"
+          ],
           "learn": [
             "Cloudflare Pages Functions로 외부 API를 안전하게 프록시하기",
             "브라우저·엣지·KV를 겹친 다층 캐싱 전략"
@@ -59,12 +72,19 @@
             "실시간 추정 iNAV로 해외형 ETF 다음날 시초가 방향 예측",
             "최대 4개 ETF 비교, ⌘K 커맨드 팔레트"
           ],
-          "stack": ["Nuxt 4", "Tailwind CSS v4", "shadcn-vue", "Nitro Server API", "Cloudflare Pages"],
+          "stack": [
+            "Nuxt 4",
+            "Tailwind CSS v4",
+            "shadcn-vue",
+            "Nitro Server API",
+            "Cloudflare Pages"
+          ],
           "learn": [
             "실데이터와 큐레이션 메타데이터를 분리해 운영하는 패턴",
             "정적 prerender + payload 추출로 첫 화면을 즉시 띄우기"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://etfdoctor.pages.dev"
         },
         {
           "slug": "law",
@@ -76,7 +96,13 @@
             "⌘K 커맨드 팔레트, 검색어 하이라이트",
             "Cloudflare 엣지 캐시로 전 세계 빠른 응답"
           ],
-          "stack": ["Typesense", "Python 인덱서", "Vite + React + TypeScript", "shadcn/ui", "Cloudflare Pages/Workers/Tunnel"],
+          "stack": [
+            "Typesense",
+            "Python 인덱서",
+            "Vite + React + TypeScript",
+            "shadcn/ui",
+            "Cloudflare Pages/Workers/Tunnel"
+          ],
           "learn": [
             "전문검색 시스템 구축 (스키마 설계·토크나이징·하이라이트)",
             "Cloudflare Tunnel로 내 서버를 안전하게 전 세계에 연결하기"
@@ -94,12 +120,20 @@
             "독서 상태 탭 필터링, 별점·한줄평",
             "문장 수집·태그·검색·즐겨찾기, 통계 대시보드"
           ],
-          "stack": ["Nuxt 3", "Vue 3", "Tailwind CSS v4", "shadcn-vue", "Cloudflare D1 (SQLite)", "Zod"],
+          "stack": [
+            "Nuxt 3",
+            "Vue 3",
+            "Tailwind CSS v4",
+            "shadcn-vue",
+            "Cloudflare D1 (SQLite)",
+            "Zod"
+          ],
           "learn": [
             "Nuxt 한 앱에서 화면과 API를 같이 두는 구조 (Nitro 서버 라우트)",
             "외부 도서 API 여러 개를 우선순위로 이어서 호출하기"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://bookworm-bdt.pages.dev"
         },
         {
           "slug": "landman",
@@ -111,7 +145,13 @@
             "XML 응답을 JSON으로 변환하고 통계 계산",
             "k6로 부하·스트레스 성능 테스트"
           ],
-          "stack": ["Next.js 16 (App Router)", "TypeScript", "Tailwind CSS 4", "fast-xml-parser", "k6"],
+          "stack": [
+            "Next.js 16 (App Router)",
+            "TypeScript",
+            "Tailwind CSS 4",
+            "fast-xml-parser",
+            "k6"
+          ],
           "learn": [
             "공공데이터포털(data.go.kr) API 연동과 CORS 처리",
             "k6로 성능(부하) 테스트 작성하기"
@@ -128,7 +168,13 @@
             "댓글을 페이지네이션해 '실시간 채팅' 흐름으로 재생 (속도·정렬·반복·시어터 모드)",
             "Cloudflare KV로 채널별 영상 분류 캐싱"
           ],
-          "stack": ["Next.js 16", "React 19", "Cloudflare Workers/Pages", "OpenNext", "Tailwind CSS"],
+          "stack": [
+            "Next.js 16",
+            "React 19",
+            "Cloudflare Workers/Pages",
+            "OpenNext",
+            "Tailwind CSS"
+          ],
           "learn": [
             "YouTube API 연동 (페이지네이션·메타데이터 캐싱)",
             "ISR + KV + Cache API를 겹친 캐시 전략"
@@ -154,12 +200,18 @@
             "리뷰 페이지네이션과 무한 스크롤 처리",
             "쿠키·User-Agent·딜레이로 봇 차단 우회"
           ],
-          "stack": ["Python (requests, BeautifulSoup)", "Playwright", "Cloudflare Workers", "cron/systemd"],
+          "stack": [
+            "Python (requests, BeautifulSoup)",
+            "Playwright",
+            "Cloudflare Workers",
+            "cron/systemd"
+          ],
           "learn": [
             "여러 사이트의 서로 다른 페이지 구조를 파싱하는 전략",
             "크롤러를 parser/scraper로 나눠 재사용하기"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://musinsa.rescene.co"
         },
         {
           "slug": "musinsa",
@@ -171,7 +223,13 @@
             "6시간마다 자동 갱신 → Cloudflare KV에 저장 (gzip 650KB→60KB)",
             "갱신 후 상품 수·할인율 TOP5를 텔레그램으로 알림"
           ],
-          "stack": ["Cloudflare Worker (JavaScript)", "KV", "cron trigger", "Telegram API", "GitHub Actions"],
+          "stack": [
+            "Cloudflare Worker (JavaScript)",
+            "KV",
+            "cron trigger",
+            "Telegram API",
+            "GitHub Actions"
+          ],
           "learn": [
             "서버리스 cron으로 주기 작업 자동화하기",
             "Cache API·gzip으로 응답 속도(TTFB) 끌어내리기"
@@ -189,12 +247,17 @@
             "GitHub Actions로 3시간 간격 자동 실행, 도메인 폴백 자동 감지",
             "텔레그램 봇으로 수동 실행·게시판 조회·지역 필터"
           ],
-          "stack": ["Python (Playwright, Telegram API)", "GitHub Actions self-hosted runner", "systemd"],
+          "stack": [
+            "Python (Playwright, Telegram API)",
+            "GitHub Actions self-hosted runner",
+            "systemd"
+          ],
           "learn": [
             "Playwright로 실제 브라우저 로그인·자동화하기",
             "텔레그램 폴링 봇으로 양방향 명령 받기"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://github.com/seongilp/opgarun"
         },
         {
           "slug": "sony-price",
@@ -206,12 +269,18 @@
             "품절→재입고 상태 전이가 일어날 때만 알림 전송",
             "재입고 이력을 요일·시간대별로 집계"
           ],
-          "stack": ["Cloudflare Workers (JavaScript)", "KV", "Telegram API", "GitHub Actions"],
+          "stack": [
+            "Cloudflare Workers (JavaScript)",
+            "KV",
+            "Telegram API",
+            "GitHub Actions"
+          ],
           "learn": [
             "엣지 컴퓨팅 + 스케줄 작업으로 '감시 봇' 만들기",
             "상태 머신(전이 감지) 기반으로 꼭 필요할 때만 알림 보내기"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://sony-price-tracker.zihado.workers.dev"
         },
         {
           "slug": "x-collection",
@@ -223,12 +292,17 @@
             "타임라인 스크롤·증분 수집으로 반복 호출 최적화",
             "launchd/cron으로 매일 자동 수집"
           ],
-          "stack": ["Node.js", "Playwright", "Anthropic Claude SDK"],
+          "stack": [
+            "Node.js",
+            "Playwright",
+            "Anthropic Claude SDK"
+          ],
           "learn": [
             "로그인 세션을 재사용한 웹 자동화 (증분 스크래핑)",
             "git 친화적인 파일 기반 데이터 저장"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://x-collection.pages.dev"
         },
         {
           "slug": "naver-alarm",
@@ -240,7 +314,12 @@
             "macOS launchd로 주기적으로 감시 실행",
             "변동 시 텔레그램 알림"
           ],
-          "stack": ["Python", "Safari cookies", "Telegram API", "launchd (macOS)"],
+          "stack": [
+            "Python",
+            "Safari cookies",
+            "Telegram API",
+            "launchd (macOS)"
+          ],
           "learn": [
             "macOS launchd 스케줄러로 주기 작업 돌리기",
             "쿠키 공급(로컬)과 감시(서버) 역할을 나눈 분산 구조"
@@ -265,12 +344,20 @@
             "문장에서 Claude로 영단어 카드 자동 생성",
             "웹·Android·iOS 크로스플랫폼"
           ],
-          "stack": ["Dart", "Flutter", "SQLite (sembast)", "Provider", "Anthropic API", "Cloudflare Workers"],
+          "stack": [
+            "Dart",
+            "Flutter",
+            "SQLite (sembast)",
+            "Provider",
+            "Anthropic API",
+            "Cloudflare Workers"
+          ],
           "learn": [
             "플랫폼 조건부 import로 크로스플랫폼 코드 짜기",
             "복잡한 도메인 로직(학습 스케줄러)의 단위 테스트"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://ankiyo.zihado.com"
         },
         {
           "slug": "lumen",
@@ -282,12 +369,18 @@
             "위로 올려 삭제, 아래로 당겨 보관, ↩ 실수 복구",
             "수십만 장도 즉시 로딩 (쿼리 기반 + 프리페칭)"
           ],
-          "stack": ["Swift 5.9", "SwiftUI", "PhotoKit", "XcodeGen"],
+          "stack": [
+            "Swift 5.9",
+            "SwiftUI",
+            "PhotoKit",
+            "XcodeGen"
+          ],
           "learn": [
             "PhotoKit으로 사진 라이브러리를 안전하게(비파괴) 다루기",
             "대규모 미디어에서 제스처 UX와 성능 최적화"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://github.com/rescenedev/lumen-ios"
         },
         {
           "slug": "watch",
@@ -299,12 +392,18 @@
             "10문제 퀴즈·간격 반복 알림·TTS 발음",
             "Anki 덱(.apkg) 가져오기"
           ],
-          "stack": ["Swift (SwiftUI)", "watchOS", "XcodeGen", "Swift Package (KanaCore)"],
+          "stack": [
+            "Swift (SwiftUI)",
+            "watchOS",
+            "XcodeGen",
+            "Swift Package (KanaCore)"
+          ],
           "learn": [
             "SwiftUI로 iPhone + Apple Watch 동시 지원",
             "비즈니스 로직을 Swift Package로 분리해 테스트하기"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://rescenedev.github.io/watch-hira/"
         },
         {
           "slug": "expo-demo",
@@ -316,12 +415,21 @@
             "Firebase Analytics·Crashlytics, 애드몹, 보안 저장소 기본 탑재",
             "11개 전문 에이전트 + 8개 스킬로 개발 사이클 자동화"
           ],
-          "stack": ["React Native 0.81", "Expo 54", "TypeScript", "Zustand", "TanStack Query", "NativeWind", "EAS Build"],
+          "stack": [
+            "React Native 0.81",
+            "Expo 54",
+            "TypeScript",
+            "Zustand",
+            "TanStack Query",
+            "NativeWind",
+            "EAS Build"
+          ],
           "learn": [
             "큰 모바일 앱의 폴더 구조(FSD)와 CI/CD 자동화",
             "모바일 보안(토큰 저장소)과 배포 파이프라인"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://github.com/seongilp/expo-demo"
         }
       ]
     },
@@ -341,12 +449,17 @@
             "Lumen photo: 대용량 로컬/NAS 사진 라이브러리 관리자",
             "alldoc: 문서 이름+본문 검색 (SQLite FTS5), markforge: Rust+GPUI Markdown 뷰어"
           ],
-          "stack": ["Swift 6 + SwiftUI/AppKit", "Rust + GPUI", "SQLite FTS5"],
+          "stack": [
+            "Swift 6 + SwiftUI/AppKit",
+            "Rust + GPUI",
+            "SQLite FTS5"
+          ],
           "learn": [
             "대용량 데이터 앱의 성능 최적화 (수만 장 이미지 그리드)",
             "macOS 네이티브 UI 패턴과 Homebrew 배포·코드서명"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://github.com/rescenedev/anf"
         },
         {
           "slug": "hwpx",
@@ -358,12 +471,18 @@
             "Finder 검색과 mdfind CLI로 한글 문서 내용 검색",
             "제목·저자·섹션 수 같은 메타데이터 인덱싱"
           ],
-          "stack": ["Objective-C / C", "Spotlight MDImporter", "zlib", "XML 파싱"],
+          "stack": [
+            "Objective-C / C",
+            "Spotlight MDImporter",
+            "zlib",
+            "XML 파싱"
+          ],
           "learn": [
             "macOS 시스템 프로그래밍 (Spotlight 플러그인)",
             "ZIP·XML을 저수준에서 직접 파싱하기"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://codeberg.org/rescenedev/hwpx"
         },
         {
           "slug": "shardbrowser",
@@ -375,12 +494,18 @@
             "데스크탑 앱·HTTP API·MCP 서버·Python/Node SDK 동시 지원",
             "프록시 자동 바인드, 타임존·로케일 자동 해석"
           ],
-          "stack": ["Rust (Tauri)", "React + TypeScript", "패치된 Chromium", "Python/Node SDK"],
+          "stack": [
+            "Rust (Tauri)",
+            "React + TypeScript",
+            "패치된 Chromium",
+            "Python/Node SDK"
+          ],
           "learn": [
             "Tauri로 크로스플랫폼 데스크탑 앱 만들기",
             "하나의 상태를 UI·API·SDK 여러 인터페이스로 노출하기"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://github.com/ProxyShard/ShardBrowser"
         },
         {
           "slug": "ev",
@@ -392,12 +517,20 @@
             "한글 문서(.hwpx/docx/pptx/xlsx/pdf) 속 내용도 추출해 검색·미리보기",
             "다중 선택으로 Markdown 보고서·zip 내보내기"
           ],
-          "stack": ["zsh", "ripgrep", "fzf", "fd", "bat", "bats-core (테스트)"],
+          "stack": [
+            "zsh",
+            "ripgrep",
+            "fzf",
+            "fd",
+            "bat",
+            "bats-core (테스트)"
+          ],
           "learn": [
             "쉘 스크립트 하나로 대화형 TUI 만들기 (fzf 바인딩)",
             "Homebrew tap으로 도구 배포하기"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://github.com/rescenedev/ev"
         }
       ]
     },
@@ -417,12 +550,20 @@
             "주문 전 미리보기(--dry-run)·확인 프롬프트·고가 주문 게이트",
             "시뮬레이션 모드와 macOS Keychain 안전 보관"
           ],
-          "stack": ["Python 3.11+", "Typer", "httpx", "rich", "prompt_toolkit", "plotext"],
+          "stack": [
+            "Python 3.11+",
+            "Typer",
+            "httpx",
+            "rich",
+            "prompt_toolkit",
+            "plotext"
+          ],
           "learn": [
             "안전하면서 쓰기 좋은 CLI 설계 (dry-run·확인·시뮬레이션)",
             "OAuth2 인증과 토큰 캐싱"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://pypi.org/project/tossinvest-cli/"
         }
       ]
     },
@@ -442,7 +583,13 @@
             "Dockerfile 없이 선언적으로 이미지 조립",
             "서명·SBOM 생성·cosign 검증 파이프라인"
           ],
-          "stack": ["melange", "apko", "cosign", "trivy/grype", "Go/Python/Java"],
+          "stack": [
+            "melange",
+            "apko",
+            "cosign",
+            "trivy/grype",
+            "Go/Python/Java"
+          ],
           "learn": [
             "컨테이너 보안 (선언적 조립의 실제 효과)",
             "소프트웨어 서명과 검증"
@@ -459,7 +606,14 @@
             "Keycloak + LDAP으로 SSO, Vault로 동적 자격증명",
             "셀프서비스 접근 신청 포털"
           ],
-          "stack": ["Terraform", "HashiCorp Boundary/Vault", "Docker Compose", "Keycloak", "SPIRE", "Cilium"],
+          "stack": [
+            "Terraform",
+            "HashiCorp Boundary/Vault",
+            "Docker Compose",
+            "Keycloak",
+            "SPIRE",
+            "Cilium"
+          ],
           "learn": [
             "GitOps로 접근제어를 선언적으로 관리하기",
             "zero-trust 인프라 전체 구성 흐름"
@@ -476,12 +630,18 @@
             "원본 유지한 채 OS 패치, cosign 오프라인 서명",
             "웹 대시보드 조회 + CLI 실제 조치"
           ],
-          "stack": ["FastAPI (Python)", "Next.js 16", "Tailwind v4", "Trivy/Grype/cosign"],
+          "stack": [
+            "FastAPI (Python)",
+            "Next.js 16",
+            "Tailwind v4",
+            "Trivy/Grype/cosign"
+          ],
           "learn": [
             "비동기 작업 처리와 상태 관리 (백그라운드 큐)",
             "웹과 CLI가 같은 서비스 코드를 재사용하는 구조"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://github.com/seongilp/oyguard"
         },
         {
           "slug": "oy-hack",
@@ -493,7 +653,11 @@
             "CORS 오리진 반사·verbose 에러·내부 텔레메트리 노출 발굴",
             "엔드포인트·스키마 카탈로깅과 우선순위화"
           ],
-          "stack": ["JSON/Markdown 리포트", "API 스윕", "DB 스키마 스캔"],
+          "stack": [
+            "JSON/Markdown 리포트",
+            "API 스윕",
+            "DB 스키마 스캔"
+          ],
           "learn": [
             "API 보안 점검 방법론 (인증·CORS·에러·권한)",
             "대규모 엔드포인트를 카탈로깅하고 위험도로 줄세우기"
@@ -510,7 +674,11 @@
             "AWS KMS 기반 솔루션 제안 (자동 순환·감사 로그·IAM Roles Anywhere)",
             "Vault 대안과 운영 복잡도 비교"
           ],
-          "stack": ["AWS KMS", "IAM Roles Anywhere", "Vault Transit"],
+          "stack": [
+            "AWS KMS",
+            "IAM Roles Anywhere",
+            "Vault Transit"
+          ],
           "learn": [
             "엔터프라이즈 키관리 아키텍처 설계 사상",
             "보안 의사결정 시 트레이드오프 비교하기"
@@ -527,7 +695,11 @@
             "웹 UI·인증·관측성 제공, config.json 선언적 설정",
             "Claude Code 같은 클라이언트에 단일 주소로 노출"
           ],
-          "stack": ["Bifrost", "Docker Compose", "GCP BigQuery"],
+          "stack": [
+            "Bifrost",
+            "Docker Compose",
+            "GCP BigQuery"
+          ],
           "learn": [
             "MCP 프로토콜과 클라이언트-서버 구조",
             "API 게이트웨이 패턴 (인증·라우팅·도구 화이트리스팅)"
@@ -544,12 +716,19 @@
             "원격 parquet·API·CSV 등 다양한 데이터 소스 통합",
             "커스텀 데이터 테스트, lineage 그래프, 대시보드 생성"
           ],
-          "stack": ["dbt", "DuckDB", "SQL", "Jinja2", "Python"],
+          "stack": [
+            "dbt",
+            "DuckDB",
+            "SQL",
+            "Jinja2",
+            "Python"
+          ],
           "learn": [
             "dbt 정석 — seed→staging→mart 계층 설계",
             "커스텀 테스트로 비즈니스 규칙 검증하기"
           ],
-          "status": "working"
+          "status": "working",
+          "live": "https://github.com/seongilp/dbt-playground"
         },
         {
           "slug": "tactics-5sa",
@@ -561,7 +740,14 @@
             "Spring REST Docs로 API 문서 자동 생성",
             "Testcontainers로 PostgreSQL/Valkey 통합 테스트"
           ],
-          "stack": ["Java 25", "Spring Boot 4", "Spring Modulith", "PostgreSQL", "Valkey", "ArchUnit"],
+          "stack": [
+            "Java 25",
+            "Spring Boot 4",
+            "Spring Modulith",
+            "PostgreSQL",
+            "Valkey",
+            "ArchUnit"
+          ],
           "learn": [
             "엔터프라이즈 아키텍처 원칙 (hexagonal·DDD·slice testing)",
             "멀티모듈 설계와 자동 API 문서화"
