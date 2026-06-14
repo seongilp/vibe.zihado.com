@@ -4,280 +4,257 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>바이브 코딩 쇼케이스 — AI와 함께 만든 것들</title>
-<meta name="description" content="혼자서, AI와 짝을 이뤄 만든 30여 개의 작은 프로젝트들. 동네 주민 코딩 교육용 포트폴리오.">
+<meta name="description" content="AI와 짝을 이뤄 만든 30여 개의 작은 프로젝트. 동네 주민 코딩 교육용 포트폴리오.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
   :root{
-    --paper:#FBF6EC;
-    --paper-2:#F4ECDC;
-    --ink:#2B2620;
-    --ink-soft:#6B6356;
-    --line:#E3D8C3;
-    --coral:#F2724B;
-    --tangerine:#F2A33C;
-    --teal:#2E9E8F;
-    --sky:#3B82C4;
-    --plum:#9B5DE5;
-    --rose:#E2557E;
-    --shadow:rgba(43,38,32,.14);
+    --bg:#FFFFFF;
+    --fg:#111827;
+    --blue:#3B82F6;   --blue-d:#2563EB;  --blue-50:#EFF6FF;  --blue-100:#DBEAFE;
+    --emerald:#10B981;--emerald-d:#059669;--emerald-50:#ECFDF5;--emerald-100:#D1FAE5;
+    --amber:#F59E0B;  --amber-d:#D97706; --amber-50:#FFFBEB; --amber-100:#FEF3C7;
+    --muted:#F3F4F6;  --muted-2:#E5E7EB; --gray-500:#6B7280;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:'Gowun Dodum',-apple-system,sans-serif;
-    background:var(--paper);
-    color:var(--ink);
-    line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-    background-image:
-      radial-gradient(circle at 12% 18%, rgba(242,163,60,.10), transparent 42%),
-      radial-gradient(circle at 88% 8%, rgba(46,158,143,.10), transparent 40%),
-      radial-gradient(circle at 50% 100%, rgba(242,114,75,.08), transparent 55%);
+    font-family:'Outfit','Pretendard',-apple-system,sans-serif;font-weight:400;
+    background:var(--bg);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
   }
-  /* subtle paper grain */
-  body::before{
-    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  }
-  .wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 22px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+  .full{width:100%}
+  ::selection{background:var(--amber);color:#fff}
+  h1,h2,h3,h4{font-weight:800;letter-spacing:-.02em;line-height:1.05}
 
-  /* ---------- HERO ---------- */
-  header.hero{padding:72px 0 30px;text-align:center;position:relative}
-  .badge{
-    display:inline-block;font-family:'Fraunces',serif;font-style:italic;
-    background:var(--ink);color:var(--paper);padding:6px 16px;border-radius:999px;
-    font-size:.92rem;letter-spacing:.02em;transform:rotate(-2deg);
-    box-shadow:3px 4px 0 var(--coral);
-  }
-  h1.title{
-    font-family:'Jua',sans-serif;font-weight:400;line-height:1.05;
-    font-size:clamp(2.7rem,8vw,5.4rem);margin:22px 0 6px;letter-spacing:-.01em;
-  }
-  h1.title .pop{color:var(--coral);position:relative;display:inline-block}
-  h1.title .pop::after{
-    content:"";position:absolute;left:-4px;right:-4px;bottom:8px;height:14px;z-index:-1;
-    background:var(--tangerine);opacity:.4;border-radius:4px;transform:rotate(-1.2deg);
-  }
-  .sub{font-size:clamp(1rem,2.4vw,1.22rem);color:var(--ink-soft);max-width:640px;margin:14px auto 0}
-  .intro{max-width:680px;margin:26px auto 0;font-size:1.02rem;color:var(--ink)}
-  .intro b{color:var(--coral)}
-
-  /* ---------- STATS ---------- */
-  .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:40px 0 8px}
-  .stat{
-    background:#fff;border:2px solid var(--ink);border-radius:16px;padding:14px 22px;
-    box-shadow:4px 5px 0 var(--shadow);min-width:120px;text-align:center;
-  }
-  .stat:nth-child(odd){transform:rotate(-1.5deg)}
-  .stat:nth-child(even){transform:rotate(1.5deg)}
-  .stat .n{font-family:'Fraunces',serif;font-size:2.1rem;font-weight:600;line-height:1;color:var(--coral)}
-  .stat .l{font-size:.86rem;color:var(--ink-soft);margin-top:4px}
+  /* ---------- HERO (blue color block) ---------- */
+  .hero{background:var(--blue);color:#fff;position:relative;overflow:hidden;padding:72px 0 80px}
+  .hero .deco{position:absolute;pointer-events:none;border-radius:50%}
+  .hero .d1{width:520px;height:520px;background:#fff;opacity:.07;top:-160px;right:-120px}
+  .hero .d2{width:300px;height:300px;background:#fff;opacity:.06;bottom:-120px;left:-80px}
+  .hero .d3{position:absolute;width:200px;height:200px;background:#fff;opacity:.05;
+    top:40px;left:38%;border-radius:18px;transform:rotate(25deg);pointer-events:none}
+  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.45fr 1fr;gap:40px;align-items:center}
+  .kicker{display:inline-block;background:rgba(255,255,255,.16);color:#fff;font-weight:600;
+    text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;padding:8px 14px;border-radius:6px}
+  .hero h1{font-size:clamp(2.6rem,7vw,5rem);margin:22px 0 0}
+  .hero h1 .amber{color:var(--amber)}
+  .hero .sub{font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:400;max-width:560px;margin-top:22px;color:rgba(255,255,255,.92)}
+  .statcards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .sc{background:#fff;border-radius:12px;padding:20px}
+  .sc .n{font-family:'Outfit';font-weight:800;font-size:2.6rem;line-height:1;letter-spacing:-.03em}
+  .sc .l{font-weight:600;font-size:.85rem;color:var(--gray-500);margin-top:6px}
+  .sc.b .n{color:var(--blue)} .sc.e .n{color:var(--emerald)} .sc.a .n{color:var(--amber)} .sc.g .n{color:var(--fg)}
+  .sc.wide{grid-column:1 / -1}
 
   /* ---------- FILTER ---------- */
-  .filters{position:sticky;top:0;z-index:20;padding:18px 0;margin:34px 0 8px;
-    background:linear-gradient(var(--paper) 72%,rgba(251,246,236,0));backdrop-filter:blur(2px)}
+  .filters{position:sticky;top:0;z-index:30;background:#fff;border-bottom:2px solid var(--muted-2);padding:14px 0}
   .filters-inner{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-  .chip{
-    font-family:'Gowun Dodum',sans-serif;cursor:pointer;border:2px solid var(--ink);
-    background:#fff;color:var(--ink);padding:8px 16px;border-radius:999px;font-size:.95rem;
-    transition:transform .12s ease, background .15s ease, color .15s ease;box-shadow:2px 3px 0 var(--shadow);
-  }
-  .chip:hover{transform:translateY(-2px)}
-  .chip.active{background:var(--ink);color:var(--paper)}
+  .chip{font-family:inherit;font-weight:600;cursor:pointer;border:none;background:var(--muted);color:var(--fg);
+    padding:9px 16px;border-radius:8px;font-size:.92rem;transition:all .2s ease}
+  .chip:hover{background:var(--muted-2);transform:scale(1.04)}
+  .chip.active{background:var(--blue);color:#fff}
+  .chip:focus-visible{outline:none;box-shadow:0 0 0 3px #fff,0 0 0 5px var(--blue)}
 
   /* ---------- CATEGORY ---------- */
-  .cat{margin:50px 0 10px}
-  .cat-head{display:flex;align-items:center;gap:14px;margin-bottom:6px}
-  .cat-emoji{font-size:2rem;filter:drop-shadow(2px 2px 0 var(--shadow))}
-  .cat-title{font-family:'Jua',sans-serif;font-size:clamp(1.5rem,4vw,2.1rem)}
-  .cat-blurb{color:var(--ink-soft);max-width:760px;margin-bottom:24px;font-size:.98rem}
-  .cat-rule{height:3px;background:repeating-linear-gradient(90deg,var(--ink) 0 14px,transparent 14px 24px);
-    border-radius:3px;margin-bottom:26px;opacity:.5}
+  .catalog{padding:20px 0 0}
+  .cat{padding:48px 0 4px}
+  .cat-label{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-transform:uppercase;
+    letter-spacing:.1em;font-size:.78rem;color:#fff;padding:7px 13px;border-radius:6px}
+  .cat-label .em{font-size:1rem}
+  .cat-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:16px 0 6px}
+  .cat-title{font-size:clamp(1.6rem,4vw,2.4rem)}
+  .cat-count{font-family:'Outfit';font-weight:800;font-size:1.1rem}
+  .cat-blurb{color:var(--gray-500);max-width:780px;font-size:1rem;margin-bottom:26px}
 
-  /* ---------- CARDS ---------- */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
-  .card{
-    background:#fff;border:2px solid var(--ink);border-radius:18px;padding:22px 22px 20px;
-    box-shadow:5px 6px 0 var(--shadow);position:relative;display:flex;flex-direction:column;
-    transition:transform .16s ease, box-shadow .16s ease;
-  }
-  .card:hover{transform:translate(-2px,-3px);box-shadow:8px 10px 0 var(--shadow)}
-  .card .accent{height:8px;border-radius:6px;margin:-6px -6px 14px;width:56px}
-  .card .folder{font-family:'Fraunces',serif;font-style:italic;font-size:.82rem;color:var(--ink-soft);
-    background:var(--paper-2);border-radius:7px;padding:2px 9px;display:inline-block;align-self:flex-start}
-  .card h3{font-family:'Jua',sans-serif;font-weight:400;font-size:1.32rem;margin:10px 0 6px;line-height:1.25}
-  .card .one{color:var(--ink);font-size:.96rem;margin-bottom:12px}
-  .card .does{list-style:none;margin:0 0 14px;display:flex;flex-direction:column;gap:5px}
-  .card .does li{font-size:.9rem;color:var(--ink-soft);padding-left:18px;position:relative}
-  .card .does li::before{content:"›";position:absolute;left:2px;color:var(--coral);font-weight:700}
-  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
-  .tag{font-size:.74rem;background:var(--paper-2);border:1px solid var(--line);border-radius:6px;
-    padding:2px 8px;color:var(--ink-soft)}
-  .learn{margin-top:auto;background:var(--paper);border:2px dashed var(--ink);border-radius:13px;padding:12px 14px}
-  .learn .lh{font-family:'Jua',sans-serif;font-size:.9rem;color:var(--teal);margin-bottom:5px;display:flex;align-items:center;gap:5px}
-  .learn ul{list-style:none;display:flex;flex-direction:column;gap:4px}
-  .learn li{font-size:.85rem;padding-left:16px;position:relative}
-  .learn li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:700}
-  .card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:8px}
-  .status{font-size:.74rem;font-weight:600;padding:3px 10px;border-radius:999px;border:1.5px solid}
-  .status.working{color:var(--teal);border-color:var(--teal);background:rgba(46,158,143,.08)}
-  .status.prototype,.status.wip{color:var(--tangerine);border-color:var(--tangerine);background:rgba(242,163,60,.08)}
-  .status.proposal{color:var(--plum);border-color:var(--plum);background:rgba(155,93,229,.08)}
-  .live{font-family:'Fraunces',serif;font-style:italic;font-size:.85rem;color:var(--sky);text-decoration:none;
-    border-bottom:2px solid var(--sky)}
-  .live:hover{color:var(--coral);border-color:var(--coral)}
+  /* ---------- CARDS (flat color blocks) ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+  .card{border-radius:12px;padding:24px;display:flex;flex-direction:column;cursor:default;
+    transition:transform .2s ease, background .2s ease}
+  .card:hover{transform:scale(1.02)}
+  .card .topbar{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .card .dot{width:34px;height:34px;border-radius:8px;flex:none;display:grid;place-items:center;color:#fff;font-weight:800;font-family:'Outfit';font-size:.9rem}
+  .card .folder{font-family:'Outfit';font-weight:500;font-size:.78rem;color:var(--gray-500)}
+  .card h3{font-size:1.3rem;margin-bottom:8px}
+  .card .one{font-weight:500;font-size:.95rem;margin-bottom:14px}
+  .card .does{list-style:none;margin:0 0 16px;display:flex;flex-direction:column;gap:7px}
+  .card .does li{font-size:.88rem;color:#374151;padding-left:20px;position:relative;line-height:1.45}
+  .card .does li::before{content:"";position:absolute;left:2px;top:.55em;width:8px;height:8px;border-radius:2px}
+  .stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+  .tag{font-family:'Outfit';font-weight:500;font-size:.74rem;background:#fff;color:#374151;
+    padding:3px 9px;border-radius:6px}
+  .learn{margin-top:auto;background:#fff;border-radius:10px;padding:14px 16px}
+  .learn .lh{font-weight:700;font-size:.92rem;margin-bottom:8px}
+  .learn ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .learn li{font-size:.84rem;color:#374151;padding-left:20px;position:relative;line-height:1.4}
+  .learn li::before{content:"+";position:absolute;left:2px;font-weight:800}
+  .card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:16px;flex-wrap:wrap}
+  .status{font-family:'Outfit';font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;
+    padding:5px 10px;border-radius:6px;color:#fff}
+  .status.working{background:var(--emerald)}
+  .status.prototype,.status.wip{background:var(--amber)}
+  .status.proposal{background:var(--blue)}
+  .live{font-family:'Outfit';font-weight:600;font-size:.8rem;text-decoration:none;color:#fff;
+    padding:6px 11px;border-radius:6px;transition:all .2s ease}
+  .live:hover{transform:scale(1.05)}
   .live::before{content:"↗ "}
 
-  /* ---------- LESSONS ---------- */
-  .lessons{margin:70px 0 30px;background:var(--ink);color:var(--paper);border-radius:26px;padding:44px 32px;
-    box-shadow:7px 9px 0 var(--coral);position:relative;overflow:hidden}
-  .lessons h2{font-family:'Jua',sans-serif;font-size:clamp(1.7rem,4.5vw,2.4rem);margin-bottom:8px;text-align:center}
-  .lessons .lead{text-align:center;color:#D9CFBE;max-width:560px;margin:0 auto 30px}
-  .lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px}
-  .lesson{padding:18px;border:1.5px solid rgba(251,246,236,.2);border-radius:16px;background:rgba(251,246,236,.04)}
-  .lesson .ln{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--tangerine);font-weight:600}
-  .lesson h4{font-family:'Jua',sans-serif;font-weight:400;font-size:1.1rem;margin:6px 0 8px}
-  .lesson p{font-size:.88rem;color:#D9CFBE;line-height:1.55}
+  /* card color variants */
+  .v-blue{background:var(--blue-50)} .v-blue:hover{background:var(--blue-100)}
+  .v-blue .dot{background:var(--blue)} .v-blue .does li::before{background:var(--blue)}
+  .v-blue .learn li::before{color:var(--blue)} .v-blue .live{background:var(--blue)}
+  .v-emerald{background:var(--emerald-50)} .v-emerald:hover{background:var(--emerald-100)}
+  .v-emerald .dot{background:var(--emerald)} .v-emerald .does li::before{background:var(--emerald)}
+  .v-emerald .learn li::before{color:var(--emerald)} .v-emerald .live{background:var(--emerald)}
+  .v-amber{background:var(--amber-50)} .v-amber:hover{background:var(--amber-100)}
+  .v-amber .dot{background:var(--amber)} .v-amber .does li::before{background:var(--amber)}
+  .v-amber .learn li::before{color:var(--amber-d)} .v-amber .live{background:var(--amber-d)}
 
-  /* ---------- FOOTER ---------- */
-  footer{text-align:center;padding:40px 0 70px;color:var(--ink-soft)}
-  footer .hand{font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:var(--ink)}
-  footer .small{font-size:.82rem;margin-top:8px}
+  /* ---------- LESSONS (dark color block) ---------- */
+  .lessons{background:var(--fg);color:#fff;padding:72px 0;margin-top:72px}
+  .lessons h2{font-size:clamp(1.9rem,5vw,3rem);text-align:center}
+  .lessons h2 .amber{color:var(--amber)}
+  .lessons .lead{text-align:center;font-weight:400;color:rgba(255,255,255,.7);max-width:560px;margin:14px auto 40px}
+  .lgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+  .lesson{background:#1F2937;border-radius:12px;padding:24px;transition:transform .2s ease}
+  .lesson:hover{transform:scale(1.02)}
+  .lesson .ln{font-family:'Outfit';font-weight:800;font-size:2.2rem;line-height:1}
+  .lesson:nth-child(3n+1) .ln{color:var(--blue)}
+  .lesson:nth-child(3n+2) .ln{color:var(--emerald)}
+  .lesson:nth-child(3n) .ln{color:var(--amber)}
+  .lesson h4{font-size:1.2rem;margin:8px 0 8px}
+  .lesson p{font-size:.88rem;font-weight:400;color:rgba(255,255,255,.75);line-height:1.5}
 
-  .loading,.errbox{text-align:center;padding:60px 20px;color:var(--ink-soft)}
-  .errbox code{background:var(--paper-2);padding:2px 7px;border-radius:6px;font-family:'Fraunces',serif}
+  /* ---------- CTA + FOOTER ---------- */
+  .cta{background:var(--amber);color:var(--fg);padding:64px 0;position:relative;overflow:hidden}
+  .cta .deco{position:absolute;width:360px;height:360px;border-radius:50%;background:#fff;opacity:.12;
+    top:-120px;right:-80px;pointer-events:none}
+  .cta-inner{position:relative;z-index:1;text-align:center}
+  .cta h2{font-size:clamp(1.6rem,4.5vw,2.6rem);max-width:760px;margin:0 auto}
+  footer{background:var(--fg);color:rgba(255,255,255,.6);padding:30px 0;text-align:center}
+  footer .small{font-family:'Outfit';font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:.78rem}
 
-  /* reveal */
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
-  .reveal.in{opacity:1;transform:none}
+  .loading,.errbox{text-align:center;padding:80px 24px;font-weight:500}
+  .errbox code{background:var(--muted);padding:2px 7px;border-radius:5px;font-family:'Outfit'}
 
-  @media(max-width:560px){
-    .lessons{padding:34px 20px}
-    header.hero{padding:48px 0 20px}
+  .reveal{opacity:0;transform:translateY(16px)}
+  .reveal.in{opacity:1;transform:none;transition:opacity .4s ease, transform .4s ease}
+
+  @media(max-width:760px){
+    .hero-inner{grid-template-columns:1fr;gap:30px}
+    .hero{padding:54px 0 60px}
   }
+  @media(prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none} }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <header class="hero">
-    <span class="badge">동네 코딩 교실 · 포트폴리오</span>
-    <h1 class="title">바이브 <span class="pop">코딩</span> 쇼케이스</h1>
-    <p class="sub">AI와 함께 만든 30여 개의 작은 프로젝트들</p>
-    <p class="intro" id="intro"></p>
-  </header>
+  <!-- HERO -->
+  <section class="hero full">
+    <span class="deco d1"></span><span class="deco d2"></span><span class="d3"></span>
+    <div class="wrap hero-inner">
+      <div>
+        <span class="kicker">동네 코딩 교실 · 포트폴리오</span>
+        <h1>바이브 코딩<br><span class="amber">쇼케이스</span></h1>
+        <p class="sub" id="sub"></p>
+      </div>
+      <div class="statcards" id="statcards"></div>
+    </div>
+  </section>
 
-  <section class="stats" id="stats"></section>
-
+  <!-- FILTER -->
   <nav class="filters">
-    <div class="filters-inner" id="filters"></div>
+    <div class="wrap"><div class="filters-inner" id="filters"></div></div>
   </nav>
 
-  <main id="catalog">
-    <div class="loading">프로젝트를 불러오는 중… 📦</div>
-  </main>
+  <!-- CATALOG -->
+  <div class="wrap catalog"><main id="catalog"><div class="loading">프로젝트 불러오는 중…</div></main></div>
 
-  <section class="lessons reveal" id="lessons"></section>
+  <!-- LESSONS -->
+  <section class="lessons full reveal"><div class="wrap" id="lessons"></div></section>
 
-  <footer>
-    <p class="hand">"거창하지 않아도, 직접 굴러가는 걸 만드는 게 코딩의 시작입니다."</p>
-    <p class="small">made with ❤️ and claude - <span id="count2"></span> PROJECT - 2026</p>
-  </footer>
+  <!-- CTA -->
+  <section class="cta full">
+    <span class="deco"></span>
+    <div class="wrap cta-inner">
+      <h2>거창하지 않아도, 직접 굴러가는 걸 만드는 게 코딩의 시작입니다.</h2>
+    </div>
+  </section>
 
-</div>
+  <footer><div class="wrap"><p class="small">made with ❤️ and claude - <span id="count2"></span> PROJECT - 2026</p></div></footer>
 
 <script>
-const COLORS = ['var(--coral)','var(--teal)','var(--sky)','var(--tangerine)','var(--plum)','var(--rose)'];
+const VARS = ['v-blue','v-emerald','v-amber'];
+const LABEL_BG = ['var(--blue)','var(--emerald)','var(--amber-d)'];
 const STATUS_LABEL = {working:'돌아가는 중',prototype:'프로토타입',wip:'개발 중',proposal:'제안서'};
 
 function el(tag, cls, html){const e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e;}
 
-function card(p, color){
-  const c = el('div','card reveal');
+function card(p, variant, idx){
+  const c = el('div','card reveal '+variant);
   c.dataset.cat = p._cat;
-  c.appendChild(el('div','accent')).style.background = color;
-  c.appendChild(el('span','folder', p.folder));
+  const top = el('div','topbar');
+  const dot = el('div','dot', (idx+1)); top.appendChild(dot);
+  top.appendChild(el('span','folder', p.folder));
+  c.appendChild(top);
   c.appendChild(el('h3', null, p.name));
   c.appendChild(el('p','one', p.oneLiner));
-
-  const ul = el('ul','does');
-  (p.does||[]).forEach(d => ul.appendChild(el('li',null,d)));
-  c.appendChild(ul);
-
-  const st = el('div','stack');
-  (p.stack||[]).forEach(s => st.appendChild(el('span','tag',s)));
-  c.appendChild(st);
-
+  const ul = el('ul','does'); (p.does||[]).forEach(d => ul.appendChild(el('li',null,d))); c.appendChild(ul);
+  const st = el('div','stack'); (p.stack||[]).forEach(s => st.appendChild(el('span','tag',s))); c.appendChild(st);
   const learn = el('div','learn');
   learn.appendChild(el('div','lh','🎓 배울 수 있는 것'));
-  const lu = el('ul');
-  (p.learn||[]).forEach(l => lu.appendChild(el('li',null,l)));
-  learn.appendChild(lu);
+  const lu = el('ul'); (p.learn||[]).forEach(l => lu.appendChild(el('li',null,l))); learn.appendChild(lu);
   c.appendChild(learn);
-
   const foot = el('div','card-foot');
   foot.appendChild(el('span','status '+(p.status||'working'), STATUS_LABEL[p.status]||p.status));
-  if(p.live){
-    const a = el('a','live', p.live.replace(/^https?:\/\//,''));
-    a.href = p.live; a.target='_blank'; a.rel='noopener';
-    foot.appendChild(a);
-  }
+  if(p.live){ const a=el('a','live', p.live.replace(/^https?:\/\//,'')); a.href=p.live; a.target='_blank'; a.rel='noopener'; foot.appendChild(a); }
   c.appendChild(foot);
   return c;
 }
 
 function render(data){
-  // intro + counts
   const total = data.categories.reduce((n,c)=>n+c.projects.length,0);
-  document.getElementById('intro').innerHTML = data.meta.intro
-    .replace('직접 굴러가는','<b>직접 굴러가는</b>');
+  const working = data.categories.reduce((a,c)=>a+c.projects.filter(p=>p.status==='working').length,0);
   document.getElementById('count2').textContent = total;
+  document.getElementById('sub').innerHTML =
+    'AI와 짝을 이뤄 만든 30여 개의 작은 프로젝트. 웹·앱·자동화·보안까지, 직접 굴러가는 것들만 모았습니다.';
 
-  // stats
-  const stats = document.getElementById('stats');
-  const statData = [
-    {n: total, l:'개의 프로젝트'},
-    {n: data.categories.length, l:'개 분야'},
-    {n: data.categories.reduce((a,c)=>a+c.projects.filter(p=>p.status==='working').length,0), l:'실제 작동 중'},
-    {n: '∞', l:'배울 거리'},
-  ];
-  statData.forEach(s=>{
-    const d=el('div','stat'); d.appendChild(el('div','n',s.n)); d.appendChild(el('div','l',s.l)); stats.appendChild(d);
-  });
+  document.getElementById('statcards').innerHTML =
+    '<div class="sc b"><div class="n">'+total+'</div><div class="l">개의 프로젝트</div></div>'+
+    '<div class="sc e"><div class="n">'+data.categories.length+'</div><div class="l">개 분야</div></div>'+
+    '<div class="sc a"><div class="n">'+working+'</div><div class="l">실제 작동 중</div></div>'+
+    '<div class="sc g"><div class="n">∞</div><div class="l">배울 거리</div></div>';
 
-  // filters
   const filters = document.getElementById('filters');
   const all = el('button','chip active','✺ 전체'); all.dataset.cat='all'; filters.appendChild(all);
-  data.categories.forEach(c=>{
-    const b=el('button','chip', c.emoji+' '+c.name); b.dataset.cat=c.id; filters.appendChild(b);
-  });
+  data.categories.forEach(c=>{ const b=el('button','chip', c.emoji+' '+c.name); b.dataset.cat=c.id; filters.appendChild(b); });
 
-  // catalog
   const cat = document.getElementById('catalog'); cat.innerHTML='';
   data.categories.forEach((c,ci)=>{
+    const variant = VARS[ci%VARS.length];
     const sec = el('section','cat'); sec.dataset.cat = c.id;
+    const lab = el('span','cat-label','<span class="em">'+c.emoji+'</span> '+c.name);
+    lab.style.background = LABEL_BG[ci%LABEL_BG.length];
+    sec.appendChild(lab);
     const head = el('div','cat-head');
-    head.appendChild(el('span','cat-emoji', c.emoji));
-    head.appendChild(el('h2','cat-title', c.name+' <span style="font-family:Fraunces;font-style:italic;color:var(--ink-soft);font-size:1rem">('+c.projects.length+')</span>'));
+    head.appendChild(el('h2','cat-title', c.name));
+    head.appendChild(el('span','cat-count', c.projects.length+'개'));
     sec.appendChild(head);
     sec.appendChild(el('p','cat-blurb', c.blurb));
-    sec.appendChild(el('div','cat-rule'));
     const grid = el('div','grid');
-    c.projects.forEach((p,pi)=>{ p._cat=c.id; grid.appendChild(card(p, COLORS[(ci+pi)%COLORS.length])); });
+    c.projects.forEach((p,pi)=>{ p._cat=c.id; grid.appendChild(card(p, variant, pi)); });
     sec.appendChild(grid);
     cat.appendChild(sec);
   });
 
-  // lessons
   const L = document.getElementById('lessons');
-  L.appendChild(el('h2','','💡 여러분이 배울 수 있는 것'));
+  L.appendChild(el('h2','','여러분이 <span class="amber">배울 수 있는 것</span>'));
   L.appendChild(el('p','lead','작은 프로젝트 하나하나가 코딩의 다른 근육을 길러줍니다.'));
   const lg = el('div','lgrid');
   (data.lessons||[]).forEach((les,i)=>{
-    const d=el('div','lesson');
+    const d=el('div','lesson reveal');
     d.appendChild(el('div','ln', String(i+1).padStart(2,'0')));
     d.appendChild(el('h4',null,les.title));
     d.appendChild(el('p',null,les.body));
@@ -285,8 +262,7 @@ function render(data){
   });
   L.appendChild(lg);
 
-  setupFilter();
-  setupReveal();
+  setupFilter(); setupReveal();
 }
 
 function setupFilter(){
@@ -296,14 +272,11 @@ function setupFilter(){
     chips.forEach(c=>c.classList.remove('active')); ch.classList.add('active');
     const t=ch.dataset.cat;
     sections.forEach(s=>{ s.style.display = (t==='all'||s.dataset.cat===t)?'':'none'; });
-    window.scrollTo({top: document.querySelector('.filters').offsetTop-10, behavior:'smooth'});
+    window.scrollTo({top: document.querySelector('.filters').offsetTop, behavior:'smooth'});
   }));
 }
-
 function setupReveal(){
-  const io=new IntersectionObserver(es=>{
-    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-  },{threshold:.08});
+  const io=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.06});
   document.querySelectorAll('.reveal').forEach((r,i)=>{ r.style.transitionDelay=(Math.min(i,6)*40)+'ms'; io.observe(r); });
 }
 
@@ -312,10 +285,7 @@ fetch('./projects.json')
   .then(render)
   .catch(err=>{
     document.getElementById('catalog').innerHTML =
-      '<div class="errbox">데이터를 불러오지 못했어요.<br><br>'+
-      '로컬에서 직접 열면 브라우저 보안 때문에 막힐 수 있어요.<br>'+
-      '터미널에서 <code>npx serve</code> 로 띄우거나 Cloudflare Pages에 배포하면 정상 동작합니다.<br>'+
-      '<small style="color:#aaa">('+err+')</small></div>';
+      '<div class="errbox">데이터를 불러오지 못했어요. <code>npx serve</code> 로 띄우거나 Cloudflare Pages에 배포하세요. <small>('+err+')</small></div>';
   });
 </script>
 </body>
