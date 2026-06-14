@@ -1,0 +1,596 @@
+{
+  "meta": {
+    "title": "바이브 코딩 쇼케이스",
+    "subtitle": "AI와 함께 만든 30여 개의 작은 프로젝트들",
+    "intro": "혼자서, 그리고 AI와 짝을 이뤄 만든 프로젝트 모음입니다. 웹 서비스부터 모바일 앱, 데스크탑 도구, 자동화 봇, 보안 인프라까지 — 거창하지 않아도 '직접 굴러가는 것'을 만드는 게 코딩의 시작입니다. 각 프로젝트마다 '무엇을 만들었나'와 '여러분이 배울 수 있는 것'을 정리했어요.",
+    "audience": "동네 주민 코딩 교육용",
+    "generatedAt": "2026-06-14"
+  },
+  "categories": [
+    {
+      "id": "web",
+      "name": "웹 서비스 · 대시보드",
+      "emoji": "🌐",
+      "blurb": "공개 데이터를 가져와 누구나 볼 수 있는 웹페이지로 만든 것들. 대부분 Cloudflare로 무료 배포되어 실제로 돌아갑니다.",
+      "projects": [
+        {
+          "slug": "asm",
+          "name": "국회 의정활동 감시 대시보드",
+          "folder": "asm.zihado.com",
+          "oneLiner": "대한민국 제22대 국회의원 300명의 의정활동을 실시간으로 추적하는 대시보드",
+          "does": [
+            "의원 검색·필터링과 상세 프로필 조회",
+            "계류 의안·처리 법률안 추적, 본회의 표결 결과를 의원별 명단으로 확인",
+            "위원회·국회 일정과 핵심 지표 대시보드"
+          ],
+          "stack": ["Nuxt 4 (SSR)", "Tailwind CSS v4", "shadcn-vue", "Cloudflare Workers/KV", "국회사무처 Open API"],
+          "learn": [
+            "공개 API 데이터로 대시보드를 만드는 흐름",
+            "3단 엣지 캐싱 (HTML → API → KV) 으로 빠르게 보여주기"
+          ],
+          "status": "working",
+          "live": "https://asm.zihado.com"
+        },
+        {
+          "slug": "dart",
+          "name": "DART 전자공시 조회",
+          "folder": "dart",
+          "oneLiner": "금융감독원 전자공시(OpenDART) 기반 기업 공시·재무 조회 + 국민연금 매매 동향 추적",
+          "does": [
+            "회사 검색, 공시·기업개황·재무제표 조회",
+            "국민연금 지분공시 순매수 랭킹과 연속 매수/매도 신호",
+            "⌘K 커맨드 팔레트로 빠른 이동, 즐겨찾기 저장"
+          ],
+          "stack": ["Svelte 5", "Vite", "Tailwind CSS v4", "shadcn-svelte", "Cloudflare Pages Functions", "OpenDART API"],
+          "learn": [
+            "Cloudflare Pages Functions로 외부 API를 안전하게 프록시하기",
+            "브라우저·엣지·KV를 겹친 다층 캐싱 전략"
+          ],
+          "status": "working",
+          "live": "https://opendart.pages.dev"
+        },
+        {
+          "slug": "etf-doctor",
+          "name": "ETF 닥터",
+          "folder": "etf-doctor",
+          "oneLiner": "국내·미국 ETF의 순매매 흐름과 추정 iNAV를 실시간으로 보여주는 대시보드",
+          "does": [
+            "오늘 많이 산/판 ETF를 첫 화면에 표시",
+            "실시간 추정 iNAV로 해외형 ETF 다음날 시초가 방향 예측",
+            "최대 4개 ETF 비교, ⌘K 커맨드 팔레트"
+          ],
+          "stack": ["Nuxt 4", "Tailwind CSS v4", "shadcn-vue", "Nitro Server API", "Cloudflare Pages"],
+          "learn": [
+            "실데이터와 큐레이션 메타데이터를 분리해 운영하는 패턴",
+            "정적 prerender + payload 추출로 첫 화면을 즉시 띄우기"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "law",
+          "name": "법령 초고속 검색",
+          "folder": "law.zihado.com",
+          "oneLiner": "대한민국 법령·판례·행정규칙 약 54만 조문을 조문 단위로 즉시 검색하는 전문검색 시스템",
+          "does": [
+            "한국어 토크나이저 기반 instant-search와 패싯 필터",
+            "⌘K 커맨드 팔레트, 검색어 하이라이트",
+            "Cloudflare 엣지 캐시로 전 세계 빠른 응답"
+          ],
+          "stack": ["Typesense", "Python 인덱서", "Vite + React + TypeScript", "shadcn/ui", "Cloudflare Pages/Workers/Tunnel"],
+          "learn": [
+            "전문검색 시스템 구축 (스키마 설계·토크나이징·하이라이트)",
+            "Cloudflare Tunnel로 내 서버를 안전하게 전 세계에 연결하기"
+          ],
+          "status": "working",
+          "live": "https://law.zihado.com"
+        },
+        {
+          "slug": "bookworm",
+          "name": "북웜 (독서 기록장)",
+          "folder": "bookworm",
+          "oneLiner": "책에서 만난 좋은 문장을 모으고 나만의 책장을 관리하는 웹앱",
+          "does": [
+            "제목 검색으로 표지·저자·출판사 자동 채우기 (알라딘/카카오/구글 북스)",
+            "독서 상태 탭 필터링, 별점·한줄평",
+            "문장 수집·태그·검색·즐겨찾기, 통계 대시보드"
+          ],
+          "stack": ["Nuxt 3", "Vue 3", "Tailwind CSS v4", "shadcn-vue", "Cloudflare D1 (SQLite)", "Zod"],
+          "learn": [
+            "Nuxt 한 앱에서 화면과 API를 같이 두는 구조 (Nitro 서버 라우트)",
+            "외부 도서 API 여러 개를 우선순위로 이어서 호출하기"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "landman",
+          "name": "아파트 실거래가 조회",
+          "folder": "landman",
+          "oneLiner": "국토교통부 실거래가 공개시스템 API를 사용한 아파트 매매 조회 프로토타입",
+          "does": [
+            "지역·거래년월 선택 후 실거래 조회 (MOLIT API 프록시)",
+            "XML 응답을 JSON으로 변환하고 통계 계산",
+            "k6로 부하·스트레스 성능 테스트"
+          ],
+          "stack": ["Next.js 16 (App Router)", "TypeScript", "Tailwind CSS 4", "fast-xml-parser", "k6"],
+          "learn": [
+            "공공데이터포털(data.go.kr) API 연동과 CORS 처리",
+            "k6로 성능(부하) 테스트 작성하기"
+          ],
+          "status": "prototype"
+        },
+        {
+          "slug": "yaho",
+          "name": "유튜브 댓글 라이브챗",
+          "folder": "yaho.rescene.co",
+          "oneLiner": "유튜브 채널의 댓글을 스크롤 라이브 채팅처럼 재생하는 웹앱",
+          "does": [
+            "YouTube Data API로 채널 검색·영상 목록 조회",
+            "댓글을 페이지네이션해 '실시간 채팅' 흐름으로 재생 (속도·정렬·반복·시어터 모드)",
+            "Cloudflare KV로 채널별 영상 분류 캐싱"
+          ],
+          "stack": ["Next.js 16", "React 19", "Cloudflare Workers/Pages", "OpenNext", "Tailwind CSS"],
+          "learn": [
+            "YouTube API 연동 (페이지네이션·메타데이터 캐싱)",
+            "ISR + KV + Cache API를 겹친 캐시 전략"
+          ],
+          "status": "working",
+          "live": "https://rescene.zihado.workers.dev"
+        }
+      ]
+    },
+    {
+      "id": "automation",
+      "name": "자동화 · 봇 · 스크래핑",
+      "emoji": "🤖",
+      "blurb": "사람이 반복하던 일을 컴퓨터가 대신하게 만든 것들. 정해진 시간에 알아서 돌고, 알림을 보내줍니다.",
+      "projects": [
+        {
+          "slug": "naver-scrap",
+          "name": "상품 스크래퍼 모음",
+          "folder": "naver-scrap",
+          "oneLiner": "쿠팡·네이버·무신사·명품몰 상품 정보와 리뷰를 긁어오는 통합 스크래핑 프로젝트",
+          "does": [
+            "사이트별 다른 DOM 구조(JSON-LD, __PRELOADED_STATE__ 등) 파싱",
+            "리뷰 페이지네이션과 무한 스크롤 처리",
+            "쿠키·User-Agent·딜레이로 봇 차단 우회"
+          ],
+          "stack": ["Python (requests, BeautifulSoup)", "Playwright", "Cloudflare Workers", "cron/systemd"],
+          "learn": [
+            "여러 사이트의 서로 다른 페이지 구조를 파싱하는 전략",
+            "크롤러를 parser/scraper로 나눠 재사용하기"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "musinsa",
+          "name": "무신사 갤러리 자동 갱신",
+          "folder": "musinsa.rescene.co",
+          "oneLiner": "무신사 추천 상품을 6시간마다 모아 엣지에서 빠르게 보여주는 서비스",
+          "does": [
+            "공개 API로 추천 상품을 받아 HTML로 렌더링",
+            "6시간마다 자동 갱신 → Cloudflare KV에 저장 (gzip 650KB→60KB)",
+            "갱신 후 상품 수·할인율 TOP5를 텔레그램으로 알림"
+          ],
+          "stack": ["Cloudflare Worker (JavaScript)", "KV", "cron trigger", "Telegram API", "GitHub Actions"],
+          "learn": [
+            "서버리스 cron으로 주기 작업 자동화하기",
+            "Cache API·gzip으로 응답 속도(TTFB) 끌어내리기"
+          ],
+          "status": "working",
+          "live": "https://musinsa.rescene.co"
+        },
+        {
+          "slug": "opgarun",
+          "name": "출석체크 자동화 + 텔레그램 봇",
+          "folder": "opgarun",
+          "oneLiner": "웹사이트 출석체크를 자동으로 하고 텔레그램으로 양방향 조작하는 봇",
+          "does": [
+            "Playwright로 로그인 → 출석 클릭 → 결과 판정",
+            "GitHub Actions로 3시간 간격 자동 실행, 도메인 폴백 자동 감지",
+            "텔레그램 봇으로 수동 실행·게시판 조회·지역 필터"
+          ],
+          "stack": ["Python (Playwright, Telegram API)", "GitHub Actions self-hosted runner", "systemd"],
+          "learn": [
+            "Playwright로 실제 브라우저 로그인·자동화하기",
+            "텔레그램 폴링 봇으로 양방향 명령 받기"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "sony-price",
+          "name": "소니 렌즈 재입고 알림",
+          "folder": "sony-price",
+          "oneLiner": "소니코리아 스토어 렌즈 재입고를 감시해 텔레그램으로 알려주는 추적기",
+          "does": [
+            "커머스 API를 10분마다 폴링 (Cloudflare Workers cron)",
+            "품절→재입고 상태 전이가 일어날 때만 알림 전송",
+            "재입고 이력을 요일·시간대별로 집계"
+          ],
+          "stack": ["Cloudflare Workers (JavaScript)", "KV", "Telegram API", "GitHub Actions"],
+          "learn": [
+            "엣지 컴퓨팅 + 스케줄 작업으로 '감시 봇' 만들기",
+            "상태 머신(전이 감지) 기반으로 꼭 필요할 때만 알림 보내기"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "x-collection",
+          "name": "X 북마크 수집기",
+          "folder": "x-collection",
+          "oneLiner": "X(트위터) 북마크·좋아요를 자동 수집해 로컬 JSON/Markdown으로 저장하는 CLI",
+          "does": [
+            "로그인된 브라우저 세션을 재사용한 헤드리스 자동화",
+            "타임라인 스크롤·증분 수집으로 반복 호출 최적화",
+            "launchd/cron으로 매일 자동 수집"
+          ],
+          "stack": ["Node.js", "Playwright", "Anthropic Claude SDK"],
+          "learn": [
+            "로그인 세션을 재사용한 웹 자동화 (증분 스크래핑)",
+            "git 친화적인 파일 기반 데이터 저장"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "naver-alarm",
+          "name": "네이버 쇼핑 재입고 감시",
+          "folder": "naver-alarm",
+          "oneLiner": "네이버 쇼핑 상품의 재입고·품절·가격변동을 감시해 알려주는 봇",
+          "does": [
+            "Safari 쿠키를 파싱해 HTTP 요청에 주입",
+            "macOS launchd로 주기적으로 감시 실행",
+            "변동 시 텔레그램 알림"
+          ],
+          "stack": ["Python", "Safari cookies", "Telegram API", "launchd (macOS)"],
+          "learn": [
+            "macOS launchd 스케줄러로 주기 작업 돌리기",
+            "쿠키 공급(로컬)과 감시(서버) 역할을 나눈 분산 구조"
+          ],
+          "status": "working"
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "name": "모바일 앱",
+      "emoji": "📱",
+      "blurb": "손안의 기기에서 도는 앱들. 학습 앱부터 사진 정리 앱까지, 스토어 배포 직전까지 다듬은 것들입니다.",
+      "projects": [
+        {
+          "slug": "ankiyo",
+          "name": "안키요 (암기 학습 앱)",
+          "folder": "ankiyo",
+          "oneLiner": "Anki 스타일 간격 반복(SRS) 학습 앱 — Claude로 단어 카드 자동 생성",
+          "does": [
+            "Anki 카드 템플릿을 HTML로 렌더링해 간격 반복 학습",
+            "문장에서 Claude로 영단어 카드 자동 생성",
+            "웹·Android·iOS 크로스플랫폼"
+          ],
+          "stack": ["Dart", "Flutter", "SQLite (sembast)", "Provider", "Anthropic API", "Cloudflare Workers"],
+          "learn": [
+            "플랫폼 조건부 import로 크로스플랫폼 코드 짜기",
+            "복잡한 도메인 로직(학습 스케줄러)의 단위 테스트"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "lumen",
+          "name": "루멘 (사진 정리 앱)",
+          "folder": "ios",
+          "oneLiner": "제스처로 사진·동영상을 빠르게 정리하는 무료 네이티브 iOS 앱",
+          "does": [
+            "스와이프·핀치 줌으로 사진 브라우징",
+            "위로 올려 삭제, 아래로 당겨 보관, ↩ 실수 복구",
+            "수십만 장도 즉시 로딩 (쿼리 기반 + 프리페칭)"
+          ],
+          "stack": ["Swift 5.9", "SwiftUI", "PhotoKit", "XcodeGen"],
+          "learn": [
+            "PhotoKit으로 사진 라이브러리를 안전하게(비파괴) 다루기",
+            "대규모 미디어에서 제스처 UX와 성능 최적화"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "watch",
+          "name": "일본어 학습 (Watch 지원)",
+          "folder": "watch",
+          "oneLiner": "iPhone과 Apple Watch에서 일본어 가나·단어를 학습하는 앱",
+          "does": [
+            "히라가나·가타카나 플래시카드, JLPT 단어",
+            "10문제 퀴즈·간격 반복 알림·TTS 발음",
+            "Anki 덱(.apkg) 가져오기"
+          ],
+          "stack": ["Swift (SwiftUI)", "watchOS", "XcodeGen", "Swift Package (KanaCore)"],
+          "learn": [
+            "SwiftUI로 iPhone + Apple Watch 동시 지원",
+            "비즈니스 로직을 Swift Package로 분리해 테스트하기"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "expo-demo",
+          "name": "앱 양산 하니스 (Expo)",
+          "folder": "web",
+          "oneLiner": "아이디어부터 스토어 배포까지 7단계 파이프라인으로 모바일 앱을 찍어내는 React Native 템플릿",
+          "does": [
+            "Feature-Sliced Design으로 모듈화된 RN 템플릿",
+            "Firebase Analytics·Crashlytics, 애드몹, 보안 저장소 기본 탑재",
+            "11개 전문 에이전트 + 8개 스킬로 개발 사이클 자동화"
+          ],
+          "stack": ["React Native 0.81", "Expo 54", "TypeScript", "Zustand", "TanStack Query", "NativeWind", "EAS Build"],
+          "learn": [
+            "큰 모바일 앱의 폴더 구조(FSD)와 CI/CD 자동화",
+            "모바일 보안(토큰 저장소)과 배포 파이프라인"
+          ],
+          "status": "working"
+        }
+      ]
+    },
+    {
+      "id": "desktop",
+      "name": "데스크탑 · 네이티브 도구",
+      "emoji": "🖥️",
+      "blurb": "내 컴퓨터에서 도는 진짜 프로그램들. 파일 검색, 사진 뷰어, 브라우저까지 직접 만들었습니다.",
+      "projects": [
+        {
+          "slug": "macos",
+          "name": "macOS 네이티브 앱 모음",
+          "folder": "macos",
+          "oneLiner": "직접 만든 macOS 앱들 — 파일 브라우저, 사진 뷰어, 문서 검색, Markdown 뷰어, SSH 클라이언트",
+          "does": [
+            "all_new_finder: 터미널·커맨드팔레트를 품은 분할뷰 파일 브라우저",
+            "Lumen photo: 대용량 로컬/NAS 사진 라이브러리 관리자",
+            "alldoc: 문서 이름+본문 검색 (SQLite FTS5), markforge: Rust+GPUI Markdown 뷰어"
+          ],
+          "stack": ["Swift 6 + SwiftUI/AppKit", "Rust + GPUI", "SQLite FTS5"],
+          "learn": [
+            "대용량 데이터 앱의 성능 최적화 (수만 장 이미지 그리드)",
+            "macOS 네이티브 UI 패턴과 Homebrew 배포·코드서명"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "hwpx",
+          "name": "한글 문서 Spotlight 검색",
+          "folder": "hwpx",
+          "oneLiner": "한글(.hwpx) 문서 본문을 macOS Spotlight로 검색하게 해주는 인덱서",
+          "does": [
+            ".hwpx(ZIP+XML)의 본문을 추출해 Spotlight 메타데이터로 저장",
+            "Finder 검색과 mdfind CLI로 한글 문서 내용 검색",
+            "제목·저자·섹션 수 같은 메타데이터 인덱싱"
+          ],
+          "stack": ["Objective-C / C", "Spotlight MDImporter", "zlib", "XML 파싱"],
+          "learn": [
+            "macOS 시스템 프로그래밍 (Spotlight 플러그인)",
+            "ZIP·XML을 저수준에서 직접 파싱하기"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "shardbrowser",
+          "name": "ShardBrowser",
+          "folder": "ShardBrowser",
+          "oneLiner": "다계정 운영과 스크래핑을 위한 오픈소스 anti-detect 브라우저 런처",
+          "does": [
+            "170개 사전 제작 기기 프로필과 지문 스푸핑 엔진",
+            "데스크탑 앱·HTTP API·MCP 서버·Python/Node SDK 동시 지원",
+            "프록시 자동 바인드, 타임존·로케일 자동 해석"
+          ],
+          "stack": ["Rust (Tauri)", "React + TypeScript", "패치된 Chromium", "Python/Node SDK"],
+          "learn": [
+            "Tauri로 크로스플랫폼 데스크탑 앱 만들기",
+            "하나의 상태를 UI·API·SDK 여러 인터페이스로 노출하기"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "ev",
+          "name": "ev (파일 통합 검색 CLI)",
+          "folder": "cli",
+          "oneLiner": "터미널에서 파일명과 내용을 동시에 실시간 검색하는 Everything 스타일 도구",
+          "does": [
+            "타이핑할 때마다 ripgrep/fzf/fd가 실시간 재검색",
+            "한글 문서(.hwpx/docx/pptx/xlsx/pdf) 속 내용도 추출해 검색·미리보기",
+            "다중 선택으로 Markdown 보고서·zip 내보내기"
+          ],
+          "stack": ["zsh", "ripgrep", "fzf", "fd", "bat", "bats-core (테스트)"],
+          "learn": [
+            "쉘 스크립트 하나로 대화형 TUI 만들기 (fzf 바인딩)",
+            "Homebrew tap으로 도구 배포하기"
+          ],
+          "status": "working"
+        }
+      ]
+    },
+    {
+      "id": "cli-fin",
+      "name": "CLI · 금융 도구",
+      "emoji": "⌨️",
+      "blurb": "터미널에서 도는 도구. 키보드만으로 빠르게 일을 처리합니다.",
+      "projects": [
+        {
+          "slug": "toss-cli",
+          "name": "토스증권 CLI",
+          "folder": "toss-cli",
+          "oneLiner": "토스증권 공식 Open API로 시세·주문·포트폴리오를 다루는 커맨드라인 도구",
+          "does": [
+            "공식 API만 사용, 대화형 REPL(단축키·히스토리·자동완성)",
+            "주문 전 미리보기(--dry-run)·확인 프롬프트·고가 주문 게이트",
+            "시뮬레이션 모드와 macOS Keychain 안전 보관"
+          ],
+          "stack": ["Python 3.11+", "Typer", "httpx", "rich", "prompt_toolkit", "plotext"],
+          "learn": [
+            "안전하면서 쓰기 좋은 CLI 설계 (dry-run·확인·시뮬레이션)",
+            "OAuth2 인증과 토큰 캐싱"
+          ],
+          "status": "working"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "name": "보안 · 인프라 · 데이터",
+      "emoji": "🔐",
+      "blurb": "눈에 잘 안 보이지만 시스템을 지탱하는 영역. 컨테이너 보안, 접근제어, 데이터 파이프라인을 직접 실습했습니다.",
+      "projects": [
+        {
+          "slug": "image-harden",
+          "name": "컨테이너 이미지 하드닝",
+          "folder": "image-harden",
+          "oneLiner": "Chainguard Wolfi/melange/apko로 컨테이너 이미지를 최소화·보안 강화하는 실습",
+          "does": [
+            "일반 이미지(~1.5GB, CVE 80+)와 하드닝 이미지(8~300MB, CVE 0) 비교",
+            "Dockerfile 없이 선언적으로 이미지 조립",
+            "서명·SBOM 생성·cosign 검증 파이프라인"
+          ],
+          "stack": ["melange", "apko", "cosign", "trivy/grype", "Go/Python/Java"],
+          "learn": [
+            "컨테이너 보안 (선언적 조립의 실제 효과)",
+            "소프트웨어 서명과 검증"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "boundary",
+          "name": "Zero-Trust 접근제어 실습",
+          "folder": "boundary",
+          "oneLiner": "HashiCorp Boundary + Vault + Keycloak을 Docker로 직접 띄워 배우는 zero-trust 실습",
+          "does": [
+            "Boundary로 사람→서버/DB 접근제어 (RBAC, 세션 프록시)",
+            "Keycloak + LDAP으로 SSO, Vault로 동적 자격증명",
+            "셀프서비스 접근 신청 포털"
+          ],
+          "stack": ["Terraform", "HashiCorp Boundary/Vault", "Docker Compose", "Keycloak", "SPIRE", "Cilium"],
+          "learn": [
+            "GitOps로 접근제어를 선언적으로 관리하기",
+            "zero-trust 인프라 전체 구성 흐름"
+          ],
+          "status": "prototype"
+        },
+        {
+          "slug": "oy-guard",
+          "name": "취약점 스캔·조치 자동화",
+          "folder": "oy-guard",
+          "oneLiner": "컨테이너 이미지 취약점을 스캔·패치·서명까지 자동화하는 풀스택 시스템",
+          "does": [
+            "Trivy + Grype로 취약점 분석·중복 제거",
+            "원본 유지한 채 OS 패치, cosign 오프라인 서명",
+            "웹 대시보드 조회 + CLI 실제 조치"
+          ],
+          "stack": ["FastAPI (Python)", "Next.js 16", "Tailwind v4", "Trivy/Grype/cosign"],
+          "learn": [
+            "비동기 작업 처리와 상태 관리 (백그라운드 큐)",
+            "웹과 CLI가 같은 서비스 코드를 재사용하는 구조"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "oy-hack",
+          "name": "API 보안 점검 리포트",
+          "folder": "oy-hack",
+          "oneLiner": "개발 환경 API 게이트웨이의 보안 취약점을 점검·분석한 리포트",
+          "does": [
+            "인증 없는 공개 API/DB 스키마 노출 감지",
+            "CORS 오리진 반사·verbose 에러·내부 텔레메트리 노출 발굴",
+            "엔드포인트·스키마 카탈로깅과 우선순위화"
+          ],
+          "stack": ["JSON/Markdown 리포트", "API 스윕", "DB 스키마 스캔"],
+          "learn": [
+            "API 보안 점검 방법론 (인증·CORS·에러·권한)",
+            "대규모 엔드포인트를 카탈로깅하고 위험도로 줄세우기"
+          ],
+          "status": "prototype"
+        },
+        {
+          "slug": "kms",
+          "name": "POS 키관리 개선 제안",
+          "folder": "kms",
+          "oneLiner": "POS 카드정보 암호화 키관리 개선 제안서 (AWS KMS vs HashiCorp Vault)",
+          "does": [
+            "현재 키관리 문제점 분석 (로컬 파일 저장·순환 불가)",
+            "AWS KMS 기반 솔루션 제안 (자동 순환·감사 로그·IAM Roles Anywhere)",
+            "Vault 대안과 운영 복잡도 비교"
+          ],
+          "stack": ["AWS KMS", "IAM Roles Anywhere", "Vault Transit"],
+          "learn": [
+            "엔터프라이즈 키관리 아키텍처 설계 사상",
+            "보안 의사결정 시 트레이드오프 비교하기"
+          ],
+          "status": "proposal"
+        },
+        {
+          "slug": "mcp-gateway",
+          "name": "MCP 게이트웨이",
+          "folder": "mcp-gateway",
+          "oneLiner": "여러 MCP 서버를 하나의 엔드포인트로 묶는 프록시 게이트웨이",
+          "does": [
+            "여러 MCP 서버를 aggregation (HTTP/SSE/STDIO)",
+            "웹 UI·인증·관측성 제공, config.json 선언적 설정",
+            "Claude Code 같은 클라이언트에 단일 주소로 노출"
+          ],
+          "stack": ["Bifrost", "Docker Compose", "GCP BigQuery"],
+          "learn": [
+            "MCP 프로토콜과 클라이언트-서버 구조",
+            "API 게이트웨이 패턴 (인증·라우팅·도구 화이트리스팅)"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "dbt",
+          "name": "dbt 데이터 파이프라인 놀이터",
+          "folder": "dbt-playground-repo",
+          "oneLiner": "DuckDB로 노트북에서 dbt를 갖고 노는 데이터 파이프라인 놀이터",
+          "does": [
+            "6개 도메인 (보안 스캔/git/택시/F1/포켓몬 등) seed→staging→mart 파이프라인",
+            "원격 parquet·API·CSV 등 다양한 데이터 소스 통합",
+            "커스텀 데이터 테스트, lineage 그래프, 대시보드 생성"
+          ],
+          "stack": ["dbt", "DuckDB", "SQL", "Jinja2", "Python"],
+          "learn": [
+            "dbt 정석 — seed→staging→mart 계층 설계",
+            "커스텀 테스트로 비즈니스 규칙 검증하기"
+          ],
+          "status": "working"
+        },
+        {
+          "slug": "tactics-5sa",
+          "name": "스마트팩토리 백엔드",
+          "folder": "tactics-5sa",
+          "oneLiner": "헥사고날 아키텍처와 Spring Modulith를 따르는 스마트 팩토리 백엔드",
+          "does": [
+            "DDD·5-Step 아키텍처 엄격 준수, 멀티모듈 분리",
+            "Spring REST Docs로 API 문서 자동 생성",
+            "Testcontainers로 PostgreSQL/Valkey 통합 테스트"
+          ],
+          "stack": ["Java 25", "Spring Boot 4", "Spring Modulith", "PostgreSQL", "Valkey", "ArchUnit"],
+          "learn": [
+            "엔터프라이즈 아키텍처 원칙 (hexagonal·DDD·slice testing)",
+            "멀티모듈 설계와 자동 API 문서화"
+          ],
+          "status": "wip"
+        }
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "title": "공개 데이터를 가져와 화면으로",
+      "body": "정부·금융·쇼핑몰이 열어둔 공개 API와 데이터를 가져와 누구나 보는 웹페이지로 만드는 법. 코딩의 가장 빠른 보람."
+    },
+    {
+      "title": "반복은 컴퓨터에게",
+      "body": "매일 손으로 하던 일(출석·재입고 확인·수집)을 스케줄러와 봇으로 자동화하고 텔레그램으로 알림 받기."
+    },
+    {
+      "title": "공짜로 배포하기",
+      "body": "Cloudflare Pages·Workers·KV로 서버 비용 없이 전 세계에 내 서비스를 띄우는 법."
+    },
+    {
+      "title": "내 손안의 앱",
+      "body": "Flutter·SwiftUI로 진짜 스마트폰 앱을 만들고 스토어에 올리는 과정까지."
+    },
+    {
+      "title": "AI와 짝코딩",
+      "body": "Claude 같은 AI를 도구로 끼워 카드 생성·코드 작성·자동화를 함께 하는 '바이브 코딩' 방식."
+    }
+  ]
+}

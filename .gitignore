@@ -1,0 +1,4 @@
+node_modules/
+.gstack/
+.wrangler/
+preview-hero.png
