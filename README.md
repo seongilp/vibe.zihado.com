@@ -1,47 +1,74 @@
 # 바이브 코딩 쇼케이스 🚀
 
-동네 주민 코딩 교육용 포트폴리오 사이트. AI와 함께 만든 30여 개 프로젝트를 분야별로 모았습니다.
+AI와 짝을 이뤄 만든 30여 개 프로젝트를 분야별로 모은 **동네 주민 코딩 교육용 포트폴리오** 사이트입니다.
+빌드가 필요 없는 단일 정적 페이지(`index.html` + `projects.json`)로, Cloudflare Pages에 그대로 올라갑니다.
+
+🔗 **라이브**: https://vibe.zihado.com
 
 ## 파일 구성
 
 | 파일 | 설명 |
 |------|------|
-| `index.html` | 쇼케이스 사이트 본체 (단일 정적 페이지) |
+| `index.html` | 쇼케이스 사이트 본체 (단일 정적 페이지, 의존성 0) |
 | `projects.json` | 프로젝트 내용 데이터 — **여기만 고치면 사이트가 바뀝니다** |
-| `content.md` | 같은 내용을 읽기 좋은 마크다운으로 정리한 본문 |
+| `content.md` | 같은 내용을 읽기 좋게 정리한 마크다운 |
+| `BLOG.md` | 동네 주민에게 소개하는 글 (발표/배포용) |
 
-내용을 추가/수정하려면 `projects.json`의 `categories` → `projects` 배열만 손보면 됩니다.
+내용을 추가·수정하려면 `projects.json`의 `categories → projects` 배열만 손보면 됩니다.
+세 가지 테마가 모두 같은 `projects.json`을 공유합니다.
+
+## 테마 (git 브랜치)
+
+| 브랜치 | 테마 | 주소 |
+|--------|------|------|
+| `main` | **플랫 디자인** (현재 프로덕션) | https://vibe.zihado.com |
+| `flat-theme` | 플랫 디자인 원본 | https://flat-theme.vibe-coding-dmy.pages.dev |
+| `new-theme` | 네오브루탈리즘 | https://new-theme.vibe-coding-dmy.pages.dev |
+
+> 친근한 종이 테마(최초 버전)는 git 이력에 남아 있어 언제든 되살릴 수 있습니다.
+
+## 담은 프로젝트 (6개 분야 · 30여 개)
+
+- 🌐 **웹 서비스·대시보드** — 국회 감시, 법령 검색(54만 조문), DART 공시, ETF 닥터 …
+- 🤖 **자동화·봇·스크래핑** — 출석 자동화, 재입고 알림, 상품 스크래퍼 …
+- 📱 **모바일 앱** — 루멘(사진 정리), 안키요(암기), 일본어 학습 …
+- 🖥️ **데스크탑·네이티브 도구** — ev(파일 검색 CLI), 한글 Spotlight, ShardBrowser …
+- ⌨️ **CLI·금융** — 토스증권 CLI
+- 🔐 **보안·인프라·데이터** — 컨테이너 하드닝, zero-trust, dbt 파이프라인 …
+
+각 카드에는 *한 줄 소개 / 하는 일 / 기술 스택 / 🎓 배울 수 있는 것 / 상태 / 라이브 링크*가 들어 있습니다.
 
 ## 로컬에서 미리보기
 
-브라우저로 `index.html`을 직접 열면 보안 때문에 데이터를 못 불러옵니다. 작은 서버로 띄우세요:
+브라우저로 `index.html`을 직접 열면 보안 정책 때문에 데이터를 못 불러옵니다. 작은 서버로 띄우세요:
 
 ```bash
 cd vibe-coding
-python3 -m http.server 8799
-# 또는: npx serve
+python3 -m http.server 8799     # 또는: npx serve
 ```
 
 → http://localhost:8799 접속
 
 ## Cloudflare Pages 배포
 
-이 폴더는 빌드가 필요 없는 정적 사이트라 그대로 올리면 됩니다.
-
-### 방법 1) Wrangler CLI (가장 빠름)
+빌드가 필요 없는 정적 사이트라 그대로 올리면 됩니다.
 
 ```bash
-cd vibe-coding
-npx wrangler pages deploy . --project-name vibe-coding
+# 프로덕션(main) 배포
+npx wrangler pages deploy . --project-name vibe-coding --branch main
+
+# 다른 테마를 프리뷰로 배포
+npx wrangler pages deploy . --project-name vibe-coding --branch new-theme
 ```
 
-처음이면 `npx wrangler login`으로 Cloudflare 계정 인증 한 번만 하면 됩니다.
+최초 1회 `npx wrangler login`으로 Cloudflare 계정 인증이 필요합니다.
+커스텀 도메인(`vibe.zihado.com`)은 Cloudflare 대시보드 → Pages → Custom domains에서 연결돼 있습니다.
 
-### 방법 2) 대시보드에서 연결
+## 라이선스 / 출처
 
-1. 이 폴더를 GitHub 레포에 올리기
-2. Cloudflare 대시보드 → Workers & Pages → Create → Pages → Git 연결
-3. 빌드 설정: **Build command 비움**, **Output directory = `/`** (또는 이 폴더)
-4. Deploy
+모든 프로젝트는 직접 만든 것이며, 쇼케이스 텍스트는 교육 목적의 요약입니다.
+일부 프로젝트는 비공개 저장소라 카드만 표시되고 링크가 없습니다.
 
-배포 후 `https://vibe-coding.pages.dev` 같은 주소가 생깁니다. 동네 분들께 이 링크만 보내면 됩니다.
+---
+
+*made with ❤️ and claude*
