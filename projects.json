@@ -156,7 +156,8 @@
             "공공데이터포털(data.go.kr) API 연동과 CORS 처리",
             "k6로 성능(부하) 테스트 작성하기"
           ],
-          "status": "prototype"
+          "status": "prototype",
+          "live": "https://land.zihado.com"
         },
         {
           "slug": "yaho",
