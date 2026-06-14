@@ -404,32 +404,6 @@
           ],
           "status": "working",
           "live": "https://rescenedev.github.io/watch-hira/"
-        },
-        {
-          "slug": "expo-demo",
-          "name": "앱 양산 하니스 (Expo)",
-          "folder": "web",
-          "oneLiner": "아이디어부터 스토어 배포까지 7단계 파이프라인으로 모바일 앱을 찍어내는 React Native 템플릿",
-          "does": [
-            "Feature-Sliced Design으로 모듈화된 RN 템플릿",
-            "Firebase Analytics·Crashlytics, 애드몹, 보안 저장소 기본 탑재",
-            "11개 전문 에이전트 + 8개 스킬로 개발 사이클 자동화"
-          ],
-          "stack": [
-            "React Native 0.81",
-            "Expo 54",
-            "TypeScript",
-            "Zustand",
-            "TanStack Query",
-            "NativeWind",
-            "EAS Build"
-          ],
-          "learn": [
-            "큰 모바일 앱의 폴더 구조(FSD)와 CI/CD 자동화",
-            "모바일 보안(토큰 저장소)과 배포 파이프라인"
-          ],
-          "status": "working",
-          "live": "https://github.com/seongilp/expo-demo"
         }
       ]
     },
@@ -482,29 +456,6 @@
             "ZIP·XML을 저수준에서 직접 파싱하기"
           ],
           "status": "working"
-        },
-        {
-          "slug": "shardbrowser",
-          "name": "ShardBrowser",
-          "folder": "ShardBrowser",
-          "oneLiner": "다계정 운영과 스크래핑을 위한 오픈소스 anti-detect 브라우저 런처",
-          "does": [
-            "170개 사전 제작 기기 프로필과 지문 스푸핑 엔진",
-            "데스크탑 앱·HTTP API·MCP 서버·Python/Node SDK 동시 지원",
-            "프록시 자동 바인드, 타임존·로케일 자동 해석"
-          ],
-          "stack": [
-            "Rust (Tauri)",
-            "React + TypeScript",
-            "패치된 Chromium",
-            "Python/Node SDK"
-          ],
-          "learn": [
-            "Tauri로 크로스플랫폼 데스크탑 앱 만들기",
-            "하나의 상태를 UI·API·SDK 여러 인터페이스로 노출하기"
-          ],
-          "status": "working",
-          "live": "https://github.com/ProxyShard/ShardBrowser"
         },
         {
           "slug": "ev",
@@ -727,30 +678,6 @@
           ],
           "status": "working",
           "live": "https://github.com/seongilp/dbt-playground"
-        },
-        {
-          "slug": "tactics-5sa",
-          "name": "스마트팩토리 백엔드",
-          "folder": "tactics-5sa",
-          "oneLiner": "헥사고날 아키텍처와 Spring Modulith를 따르는 스마트 팩토리 백엔드",
-          "does": [
-            "DDD·5-Step 아키텍처 엄격 준수, 멀티모듈 분리",
-            "Spring REST Docs로 API 문서 자동 생성",
-            "Testcontainers로 PostgreSQL/Valkey 통합 테스트"
-          ],
-          "stack": [
-            "Java 25",
-            "Spring Boot 4",
-            "Spring Modulith",
-            "PostgreSQL",
-            "Valkey",
-            "ArchUnit"
-          ],
-          "learn": [
-            "엔터프라이즈 아키텍처 원칙 (hexagonal·DDD·slice testing)",
-            "멀티모듈 설계와 자동 API 문서화"
-          ],
-          "status": "wip"
         }
       ]
     }

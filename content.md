@@ -135,12 +135,6 @@ iPhone과 Apple Watch에서 일본어 가나·단어를 학습하는 앱.
 - **스택**: Swift(SwiftUI) · watchOS · Swift Package
 - **🎓 배울 수 있는 것**: iPhone+Watch 동시 지원 / 로직을 패키지로 분리해 테스트
 
-### 앱 양산 하니스 (Expo) · `web`
-아이디어부터 스토어 배포까지 7단계로 모바일 앱을 찍어내는 RN 템플릿.
-- FSD 모듈화, Firebase·애드몹·보안 저장소 기본 탑재, 에이전트 자동화
-- **스택**: React Native · Expo · Zustand · TanStack Query · NativeWind · EAS
-- **🎓 배울 수 있는 것**: 큰 앱의 폴더 구조와 CI/CD / 모바일 보안·배포 파이프라인
-
 ---
 
 ## 🖥️ 데스크탑 · 네이티브 도구
@@ -158,12 +152,6 @@ iPhone과 Apple Watch에서 일본어 가나·단어를 학습하는 앱.
 - .hwpx(ZIP+XML) 본문 추출, Finder·mdfind 검색
 - **스택**: Objective-C/C · Spotlight MDImporter · zlib
 - **🎓 배울 수 있는 것**: macOS 시스템 프로그래밍 / ZIP·XML 저수준 파싱
-
-### ShardBrowser · `ShardBrowser`
-다계정 운영과 스크래핑을 위한 오픈소스 anti-detect 브라우저 런처.
-- 170개 기기 프로필, 데스크탑 앱·API·MCP·SDK 동시 지원
-- **스택**: Rust(Tauri) · React · 패치된 Chromium · Python/Node SDK
-- **🎓 배울 수 있는 것**: Tauri 데스크탑 앱 / 하나의 상태를 여러 인터페이스로 노출
 
 ### ev (파일 통합 검색 CLI) · `cli`
 터미널에서 파일명과 내용을 동시에 실시간 검색하는 Everything 스타일 도구.
@@ -221,11 +209,6 @@ POS 카드정보 암호화 키관리 개선 제안서 (AWS KMS vs Vault).
 DuckDB로 노트북에서 dbt를 갖고 노는 데이터 파이프라인 놀이터.
 - 6개 도메인 seed→staging→mart, 다양한 데이터 소스, lineage 그래프
 - **🎓 배울 수 있는 것**: dbt 계층 설계 / 커스텀 테스트로 규칙 검증
-
-### 스마트팩토리 백엔드 · `tactics-5sa`
-헥사고날 아키텍처와 Spring Modulith를 따르는 백엔드.
-- DDD·멀티모듈, REST Docs 자동 문서화, Testcontainers 통합 테스트
-- **🎓 배울 수 있는 것**: 엔터프라이즈 아키텍처 원칙 / 멀티모듈 설계
 
 ---
 
