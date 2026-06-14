@@ -142,14 +142,106 @@
   .reveal{opacity:0;transform:translateY(16px)}
   .reveal.in{opacity:1;transform:none;transition:opacity .4s ease, transform .4s ease}
 
+  /* ---------- TOP NAV (page tabs) ---------- */
+  .topnav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:2px solid var(--muted-2)}
+  .topnav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
+  .brand{display:flex;align-items:center;gap:9px;font-family:'Outfit';font-weight:800;font-size:1.05rem;
+    letter-spacing:-.02em;cursor:pointer;background:none;border:none;color:var(--fg)}
+  .brand .bdot{width:22px;height:22px;border-radius:6px;background:var(--blue);display:inline-block;flex:none}
+  .tabs{display:flex;gap:6px}
+  .tab{font-family:inherit;font-weight:700;cursor:pointer;border:none;background:none;color:var(--gray-500);
+    padding:9px 15px;border-radius:8px;font-size:.95rem;transition:all .2s ease}
+  .tab:hover{background:var(--muted);color:var(--fg)}
+  .tab.active{background:var(--blue);color:#fff}
+  .tab:focus-visible,.brand:focus-visible{outline:none;box-shadow:0 0 0 3px #fff,0 0 0 5px var(--blue)}
+  .view[hidden]{display:none}
+  .filters{top:58px}   /* sit just under the sticky top nav */
+
+  /* ---------- PAGE HERO (curriculum / pricing) ---------- */
+  .page-hero{background:var(--emerald);color:#fff;padding:60px 0;position:relative;overflow:hidden}
+  .page-hero.amber-hero{background:var(--amber);color:var(--fg)}
+  .page-hero .deco{position:absolute;border-radius:50%;background:#fff;opacity:.1;pointer-events:none}
+  .page-hero .kicker{margin-bottom:18px}
+  .page-hero.amber-hero .kicker{background:rgba(0,0,0,.1);color:var(--fg)}
+  .page-hero h1{font-size:clamp(2.2rem,6vw,3.6rem)}
+  .page-hero p{margin-top:16px;font-size:clamp(1rem,2.2vw,1.2rem);max-width:640px;font-weight:400}
+  .page-hero.amber-hero p{color:rgba(17,24,39,.82)}
+
+  /* ---------- CURRICULUM ---------- */
+  .curric{padding:48px 0 8px}
+  .course{border-radius:16px;padding:30px;margin-bottom:26px}
+  .course.half{background:var(--blue-50)}
+  .course.full{background:var(--emerald-50)}
+  .course-head{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-bottom:6px}
+  .course-head h2{font-size:clamp(1.5rem,4vw,2rem)}
+  .course-badge{font-family:'Outfit';font-weight:700;font-size:.8rem;padding:6px 12px;border-radius:6px;color:#fff}
+  .course.half .course-badge{background:var(--blue)}
+  .course.full .course-badge{background:var(--emerald)}
+  .course-price{font-family:'Outfit';font-weight:800;font-size:1.05rem;margin-left:auto}
+  .course.half .course-price{color:var(--blue-d)} .course.full .course-price{color:var(--emerald-d)}
+  .course-meta{color:var(--gray-500);font-weight:600;font-size:.92rem;margin:6px 0 18px}
+  .lesson-row{display:flex;gap:18px;padding:16px 0;border-top:1px solid rgba(17,24,39,.08)}
+  .lesson-row .no{font-family:'Outfit';font-weight:800;font-size:1rem;flex:none;width:62px;padding-top:2px}
+  .course.half .lesson-row .no{color:var(--blue-d)} .course.full .lesson-row .no{color:var(--emerald-d)}
+  .lesson-row .lbody h4{font-size:1.12rem;margin-bottom:5px}
+  .lesson-row .lbody p{font-size:.92rem;color:#374151;font-weight:400;line-height:1.5}
+  .course-note{margin-top:8px;font-size:.92rem;color:#374151;background:#fff;border-radius:10px;padding:14px 16px;font-weight:500}
+
+  /* ---------- PRICING ---------- */
+  .pricing{padding:48px 0}
+  .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;align-items:stretch}
+  .price-card{border-radius:16px;padding:30px;display:flex;flex-direction:column;background:var(--muted)}
+  .price-card.feat{background:var(--blue);color:#fff}
+  .price-card .ptag{font-family:'Outfit';font-weight:700;font-size:.76rem;text-transform:uppercase;
+    letter-spacing:.08em;color:var(--gray-500)}
+  .price-card.feat .ptag{color:rgba(255,255,255,.85)}
+  .price-card h3{font-size:1.4rem;margin:9px 0 3px}
+  .price-card .hours{font-weight:600;color:var(--gray-500);margin-bottom:18px}
+  .price-card.feat .hours{color:rgba(255,255,255,.85)}
+  .price-card .amt{font-family:'Outfit';font-weight:800;font-size:2.5rem;letter-spacing:-.03em;line-height:1}
+  .price-card .amt small{font-size:.95rem;font-weight:600;color:var(--gray-500)}
+  .price-card.feat .amt small{color:rgba(255,255,255,.85)}
+  .price-card ul{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:11px}
+  .price-card li{font-size:.92rem;padding-left:23px;position:relative;line-height:1.4}
+  .price-card li::before{content:"✓";position:absolute;left:0;font-weight:800;color:var(--emerald)}
+  .price-card.feat li::before{color:#fff}
+  .price-cta{margin-top:auto;text-align:center;font-family:'Outfit';font-weight:700;text-decoration:none;
+    padding:13px;border-radius:10px;background:var(--fg);color:#fff;transition:transform .2s ease}
+  .price-card.feat .price-cta{background:#fff;color:var(--blue-d)}
+  .price-cta:hover{transform:scale(1.03)}
+  .contact-band{background:var(--fg);color:#fff;border-radius:16px;padding:38px 30px;text-align:center;margin-top:30px}
+  .contact-band h3{font-size:1.5rem;margin-bottom:10px}
+  .contact-band p{color:rgba(255,255,255,.7);margin-bottom:18px;font-weight:400}
+  .contact-band a.mail{font-family:'Outfit';font-weight:800;font-size:clamp(1.3rem,4vw,1.7rem);
+    color:var(--amber);text-decoration:none;border-bottom:2px solid transparent;transition:border .2s ease}
+  .contact-band a.mail:hover{border-bottom-color:var(--amber)}
+
   @media(max-width:760px){
     .hero-inner{grid-template-columns:1fr;gap:30px}
     .hero{padding:54px 0 60px}
+    .topnav-inner{height:54px} .filters{top:54px}
+    .tab{padding:8px 11px;font-size:.88rem} .brand span:not(.bdot){display:none}
+    .course{padding:22px} .price-card{padding:24px}
   }
   @media(prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none} }
 </style>
 </head>
 <body>
+
+  <!-- TOP NAV -->
+  <nav class="topnav">
+    <div class="wrap topnav-inner">
+      <button class="brand" data-view="showcase"><span class="bdot"></span><span>바이브 코딩</span></button>
+      <div class="tabs">
+        <button class="tab active" data-view="showcase">쇼케이스</button>
+        <button class="tab" data-view="curriculum">커리큘럼</button>
+        <button class="tab" data-view="pricing">가격</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== SHOWCASE VIEW ===================== -->
+  <div id="view-showcase" class="view">
 
   <!-- HERO -->
   <section class="hero full">
@@ -182,6 +274,134 @@
       <h2>거창하지 않아도, 직접 굴러가는 걸 만드는 게 코딩의 시작입니다.</h2>
     </div>
   </section>
+
+  </div><!-- /view-showcase -->
+
+  <!-- ===================== CURRICULUM VIEW ===================== -->
+  <div id="view-curriculum" class="view" hidden>
+    <section class="page-hero full">
+      <span class="deco" style="width:440px;height:440px;top:-170px;right:-110px"></span>
+      <span class="deco" style="width:240px;height:240px;bottom:-120px;left:-70px;opacity:.07"></span>
+      <div class="wrap">
+        <span class="kicker">2개월에 30개를 만든 방식 그대로</span>
+        <h1>커리큘럼</h1>
+        <p>문법부터 외우지 않습니다. 첫 시간에 AI와 짝을 이뤄 <b>직접 굴러가는 것</b>을 하나 만들고 시작해요. 반일은 입문, 전일은 내 프로젝트 하나를 완성해 손에 들고 가는 심화 코스입니다.</p>
+      </div>
+    </section>
+
+    <div class="wrap curric">
+      <!-- 반일 -->
+      <section class="course half reveal">
+        <div class="course-head">
+          <h2>반일 코스</h2>
+          <span class="course-badge">5시간 · 입문</span>
+          <span class="course-price">10만원</span>
+        </div>
+        <p class="course-meta">코딩이 처음이어도 OK · 노트북만 있으면 됩니다 · 4교시 구성</p>
+        <div class="lesson-row">
+          <div class="no">1교시</div>
+          <div class="lbody"><h4>바이브 코딩 첫걸음</h4><p>AI 짝코딩이 무엇인지 감을 잡고, 에디터와 AI 도구로 개발 환경을 함께 세팅합니다. 첫 "Hello"를 화면에 띄워요.</p></div>
+        </div>
+        <div class="lesson-row">
+          <div class="no">2교시</div>
+          <div class="lbody"><h4>공개 데이터를 화면으로</h4><p>정부·금융·쇼핑몰이 무료로 열어둔 데이터를 가져와 나만의 웹페이지를 만듭니다. 코딩의 가장 빠른 보람.</p></div>
+        </div>
+        <div class="lesson-row">
+          <div class="no">3교시</div>
+          <div class="lbody"><h4>반복은 컴퓨터에게</h4><p>매일 손으로 확인하던 일(재입고·가격·출석)을 자동으로 돌리고, 텔레그램으로 알림 받는 봇을 만듭니다.</p></div>
+        </div>
+        <div class="lesson-row">
+          <div class="no">4교시</div>
+          <div class="lbody"><h4>공짜로 세상에 공개</h4><p>Cloudflare로 서버 비용 0원, 내가 만든 작품을 전 세계에 배포합니다. 이 사이트도 그렇게 돌아갑니다.</p></div>
+        </div>
+      </section>
+
+      <!-- 전일 -->
+      <section class="course full reveal">
+        <div class="course-head">
+          <h2>전일 코스</h2>
+          <span class="course-badge">8시간 · 심화</span>
+          <span class="course-price">15만원</span>
+        </div>
+        <p class="course-meta">오전엔 반일 코스 전체, 오후엔 내 프로젝트를 완성 · 7교시 구성</p>
+        <div class="course-note">☀️ <b>오전 (1~4교시)</b> — 반일 코스 전체를 그대로 진행합니다. 아래는 오후 심화 3교시.</div>
+        <div class="lesson-row">
+          <div class="no">5교시</div>
+          <div class="lbody"><h4>내 손안의 앱</h4><p>진짜 스마트폰 앱을 만들어 내 폰에 띄워 봅니다. 사진 정리·암기 앱 같은 작은 앱부터.</p></div>
+        </div>
+        <div class="lesson-row">
+          <div class="no">6교시</div>
+          <div class="lbody"><h4>AI와 짝코딩 실전</h4><p>에이전트·스킬을 활용해 더 빠르게 만드는 법. 혼자가 아니라 AI를 옆에 두고 일하는 흐름을 익힙니다.</p></div>
+        </div>
+        <div class="lesson-row">
+          <div class="no">7교시</div>
+          <div class="lbody"><h4>내 프로젝트 완성</h4><p>내 아이디어 하나를 골라 기획→제작→배포까지. 끝나면 실제로 굴러가는 결과물을 손에 들고 갑니다.</p></div>
+        </div>
+      </section>
+    </div>
+  </div><!-- /view-curriculum -->
+
+  <!-- ===================== PRICING VIEW ===================== -->
+  <div id="view-pricing" class="view" hidden>
+    <section class="page-hero amber-hero full">
+      <span class="deco" style="width:440px;height:440px;top:-170px;right:-110px;opacity:.18"></span>
+      <span class="deco" style="width:240px;height:240px;bottom:-120px;left:-70px;opacity:.12"></span>
+      <div class="wrap">
+        <span class="kicker">동네 코딩 부트캠프</span>
+        <h1>가격</h1>
+        <p>반나절, 혹은 하루. 부담 없이 시작해서 직접 만든 결과물을 손에 들고 가는 부트캠프입니다.</p>
+      </div>
+    </section>
+
+    <div class="wrap pricing">
+      <div class="price-grid">
+        <div class="price-card reveal">
+          <span class="ptag">반일 · 입문</span>
+          <h3>부트캠프 반일</h3>
+          <div class="hours">5시간</div>
+          <div class="amt">10만원<small> / 1인</small></div>
+          <ul>
+            <li>입문 4교시 (1~4교시)</li>
+            <li>AI 짝코딩 환경 세팅</li>
+            <li>첫 웹페이지 무료 배포</li>
+          </ul>
+          <a class="price-cta" href="mailto:tellme@duck.com?subject=%5B%EB%B0%98%EC%9D%BC%5D%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%20%EC%8B%A0%EC%B2%AD%C2%B7%EB%AC%B8%EC%9D%98">신청 · 문의</a>
+        </div>
+
+        <div class="price-card feat reveal">
+          <span class="ptag">전일 · 심화 · 추천</span>
+          <h3>부트캠프 전일</h3>
+          <div class="hours">8시간</div>
+          <div class="amt">15만원<small> / 1인</small></div>
+          <ul>
+            <li>반일 입문 + 오후 심화 3교시</li>
+            <li>모바일 앱 · AI 짝코딩 실전</li>
+            <li>내 프로젝트 1개 완성 · 배포</li>
+          </ul>
+          <a class="price-cta" href="mailto:tellme@duck.com?subject=%5B%EC%A0%84%EC%9D%BC%5D%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84%20%EC%8B%A0%EC%B2%AD%C2%B7%EB%AC%B8%EC%9D%98">신청 · 문의</a>
+        </div>
+
+        <div class="price-card reveal">
+          <span class="ptag">맞춤</span>
+          <h3>그 외</h3>
+          <div class="hours">그룹 · 출장 · 맞춤 일정</div>
+          <div class="amt" style="font-size:2rem">문의</div>
+          <ul>
+            <li>단체 · 동호회 · 기업 그룹</li>
+            <li>원하는 주제로 맞춤 구성</li>
+            <li>일정 · 장소 협의</li>
+          </ul>
+          <a class="price-cta" href="mailto:tellme@duck.com?subject=%5B%EB%AC%B8%EC%9D%98%5D%20%EB%A7%9E%EC%B6%A4%C2%B7%EA%B7%B8%EB%A3%B9%20%EB%B6%80%ED%8A%B8%EC%BA%A0%ED%94%84">문의하기</a>
+        </div>
+      </div>
+
+      <div class="contact-band reveal">
+        <h3>신청 · 문의</h3>
+        <p>아래 메일로 편하게 연락 주세요. 코딩이 처음이어도 괜찮습니다.</p>
+        <a class="mail" href="mailto:tellme@duck.com">tellme@duck.com</a>
+      </div>
+    </div>
+  </div><!-- /view-pricing -->
 
   <footer><div class="wrap"><p class="small">made with ❤️ and claude - <span id="count2"></span> PROJECT - 2026</p></div></footer>
 
@@ -279,6 +499,20 @@ function setupReveal(){
   const io=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.06});
   document.querySelectorAll('.reveal').forEach((r,i)=>{ r.style.transitionDelay=(Math.min(i,6)*40)+'ms'; io.observe(r); });
 }
+
+// ---- page tabs (쇼케이스 / 커리큘럼 / 가격) ----
+function showView(name){
+  const ok = ['showcase','curriculum','pricing'].includes(name) ? name : 'showcase';
+  document.querySelectorAll('.view').forEach(v=>{ v.hidden = (v.id !== 'view-'+ok); });
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('active', t.dataset.view===ok));
+  if(('#'+ok) !== location.hash) history.replaceState(null,'','#'+ok);
+  window.scrollTo({top:0});
+  // re-trigger reveal animation for the newly shown view
+  document.querySelectorAll('#view-'+ok+' .reveal').forEach(r=>r.classList.add('in'));
+}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
+window.addEventListener('hashchange',()=>showView(location.hash.replace('#','')));
+{ const start = location.hash.replace('#',''); if(['curriculum','pricing'].includes(start)) showView(start); }
 
 fetch('./projects.json')
   .then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
