@@ -182,6 +182,31 @@
           ],
           "status": "working",
           "live": "https://rescene.zihado.workers.dev"
+        },
+        {
+          "slug": "city-tour",
+          "name": "실사 3D 세계 도시 투어",
+          "folder": "webgl-tour.pages.dev",
+          "oneLiner": "구글 포토리얼 3D 타일로 런던·파리·로마·뉴욕·서울·도쿄를 드론처럼 날아다니며 여행하는 웹앱",
+          "does": [
+            "도시별 주요 랜드마크를 영화 같은 드론 카메라(자동 비행·궤도 회전)로 순회하는 가이드 투어",
+            "전 세계 어디든 장소 검색, 여러 곳을 찍어 순서대로 도는 루트 투어, 즐겨찾기",
+            "랜드마크마다 위키미디어 실제 사진·위키백과 요약·거리뷰 파노라마를 한 화면에"
+          ],
+          "stack": [
+            "바닐라 JS (ES 모듈, 프레임워크 0)",
+            "Google Photorealistic 3D Tiles / Maps JS API",
+            "Wikimedia Commons · Wikipedia API",
+            "PWA (Service Worker · 오프라인 셸)",
+            "Cloudflare Pages"
+          ],
+          "learn": [
+            "WebGL 기반 3D 지도에서 카메라를 비행·궤도 제어해 시네마틱 연출 만들기",
+            "외부 공개 API(사진·요약·거리뷰)를 조합해 정보 카드 구성하기",
+            "빌드 없이 PWA로 설치형 웹앱 만들기 (manifest + service worker)"
+          ],
+          "status": "working",
+          "live": "https://webgl-tour.pages.dev"
         }
       ]
     },
