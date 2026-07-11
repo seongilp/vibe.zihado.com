@@ -1,6 +1,6 @@
 # 바이브 코딩 쇼케이스 🚀
 
-> AI와 함께 만든 30여 개의 작은 프로젝트들 — 동네 주민 코딩 교육용 포트폴리오
+> AI와 함께 만든 40여 개의 작은 프로젝트들 — 동네 주민 코딩 교육용 포트폴리오
 
 혼자서, 그리고 AI와 짝을 이뤄 만든 프로젝트 모음입니다.
 웹 서비스부터 모바일 앱, 데스크탑 도구, 자동화 봇, 보안 인프라까지 — 거창하지 않아도 **'직접 굴러가는 것'을 만드는 게 코딩의 시작**입니다.
@@ -13,12 +13,12 @@
 
 | 분야 | 프로젝트 수 | 대표작 |
 |------|:---:|------|
-| 🌐 웹 서비스·대시보드 | 7 | 국회 감시 대시보드, 법령 검색, DART 공시 |
-| 🤖 자동화·봇·스크래핑 | 6 | 출석 자동화 봇, 재입고 알림, 상품 스크래퍼 |
-| 📱 모바일 앱 | 4 | 사진 정리 앱(루멘), 암기 앱(안키요) |
-| 🖥️ 데스크탑·네이티브 도구 | 4 | 파일 검색 CLI, 한글문서 Spotlight 검색 |
+| 🌐 웹 서비스·대시보드 | 16 | 국회 감시 대시보드, 법령 검색, 실시간 같이보기(Unflix) |
+| 🤖 자동화·봇·스크래핑 | 8 | 출석 자동화 봇, 재입고 알림, 로또 자동 구매 |
+| 📱 모바일 앱 | 3 | 사진 정리 앱(루멘), 암기 앱(안키요) |
+| 🖥️ 데스크탑·네이티브 도구 | 3 | 파일 검색 CLI, 한글문서 Spotlight 검색 |
 | ⌨️ CLI·금융 | 1 | 토스증권 CLI |
-| 🔐 보안·인프라·데이터 | 8 | 컨테이너 하드닝, zero-trust, dbt 파이프라인 |
+| 🔐 보안·인프라·데이터 | 9 | NAS 웹 콘솔(Nimbo), 커스텀 NAS OS(Zen), 컨테이너 하드닝 |
 
 ---
 
@@ -70,6 +70,60 @@
 - **스택**: Next.js 16 · React 19 · Cloudflare Workers · OpenNext
 - **🎓 배울 수 있는 것**: YouTube API 연동 / ISR+KV+Cache 캐시 전략
 
+### 실사 3D 세계 도시 투어 · `webgl/webgl-tour`
+구글 포토리얼 3D 타일로 런던·파리·서울·도쿄를 드론처럼 날아다니는 웹앱.
+- 랜드마크 시네마틱 드론 투어, 장소 검색·루트 투어, 위키 사진·요약·거리뷰 카드
+- **스택**: 바닐라 JS · Google Photorealistic 3D Tiles · PWA · Cloudflare Pages
+- **🎓 배울 수 있는 것**: 3D 지도 카메라 연출 / 빌드 없이 PWA 설치형 웹앱 만들기
+
+### WebGL 비주얼 데모 모음 · `particla`
+입자·유체·블랙홀까지 11가지 그래픽 시뮬레이션 데모집.
+- GPU 파티클(100만 개), 실시간 유체, 광선 추적 블랙홀을 탭으로 감상
+- **스택**: WebGL2 · Canvas 2D · 바닐라 JS (의존성 0) · GitHub Pages
+- **🎓 배울 수 있는 것**: 그래픽 알고리즘 원리 / GPU 텍스처 핑퐁 최적화
+
+### 2026 월드컵 경기 일정·결과 · `worldcup`
+2026 FIFA 월드컵 일정·결과·대진표를 한눈에 보는 대시보드.
+- 매시간 자동 갱신, 토너먼트 대진표·조별 순위 실시간 계산
+- **스택**: Next.js 16 · TypeScript · GitHub Actions · GitHub Pages
+- **🎓 배울 수 있는 것**: SSG로 서버 없이 배포 / Actions 크론으로 데이터 자동 갱신
+
+### 광고 없는 한국 지도 · `openmap`
+오픈스트리트맵 기반 광고 없는 한국 지도 — 검색·길찾기·즐겨찾기.
+- MapLibre GL 지도, 한국어 장소 검색(Nominatim), 자동차 길찾기(OSRM)
+- **스택**: Next.js 16 · MapLibre GL · OpenStreetMap
+- **🎓 배울 수 있는 것**: WebGL 지도 렌더링 / 공개 API 프록시 패턴
+
+### MeshScope (메시 네트워크 대시보드) · `mesh`
+Meshtastic 무선 메시 네트워크 실시간 모니터링 대시보드.
+- MQTT 패킷을 지도·피드·그래프·텔레메트리 4가지 뷰로 시각화
+- **스택**: React · TypeScript · MapLibre GL · MQTT/WebSocket · Protobuf
+- **🎓 배울 수 있는 것**: 실시간 스트리밍 아키텍처 / 지도·차트 라이브러리 통합
+
+### Unflix (실시간 같이보기) · `youflix`
+Cloudflare 인프라만으로 만든 실시간 공동시청 서비스 — 내 영상·화면을 링크 하나로 같이 보기.
+- 영상 파일·화면·카메라 스트리밍, 룸 프레즌스·실시간 채팅, 시크릿 보호 프록시
+- **스택**: Cloudflare Workers · Durable Objects · Realtime SFU(WebRTC) · TypeScript
+- **🎓 배울 수 있는 것**: WebRTC+WebSocket 실시간 아키텍처 / 엣지만으로 1:N 미디어 팬아웃
+
+### weblog (브라우저 로그 분석기) · `weblog`
+로그·CSV·엑셀 100만 행을 브라우저 안 DuckDB로 즉시 SQL 분석 — 데이터가 서버로 안 나감.
+- 100만 행 1.5초 적재·밀리초 집계, SQL REPL, 가상 스크롤, OPFS 영속 저장
+- **스택**: React 19 · DuckDB-Wasm · Vite · Tailwind v4 · SheetJS
+- **🎓 배울 수 있는 것**: WASM 데이터베이스를 브라우저에서 돌리기 / Web Worker로 UI 성능 지키기
+
+### 웹 루멘 (WASM 사진 뷰어) · `wasm`
+폴더를 끌어다 놓으면 WASM이 썸네일을 만들어 브라우저에 저장하는 사진 정리 앱.
+- AssemblyScript WASM 썸네일 엔진 + Worker 풀, OPFS 저장, 중복 찾기·얼굴 인식
+- **스택**: AssemblyScript(WASM) · React 19 · OPFS · MediaPipe · Vitest
+- **🎓 배울 수 있는 것**: WASM 모듈 직접 만들기 / OPFS로 서버 없는 영속 저장
+
+### 10만 파티클 플레이그라운드 · `pixijs/work1`
+10만 개 파티클이 마우스에 실시간 반응하는 인터랙티브 그래픽 데모.
+- 끌림·소용돌이·중력·반발·노이즈 흐름장 5가지 모드, 클릭 폭발
+- **스택**: PixiJS v8 · Vite · 바닐라 JS
+- **🎓 배울 수 있는 것**: WebGL로 대량 오브젝트 60fps 렌더링 / 힘 계산 모듈 설계
+
 ---
 
 ## 🤖 자동화 · 봇 · 스크래핑
@@ -111,6 +165,18 @@ X(트위터) 북마크·좋아요를 자동 수집해 로컬 JSON/Markdown으로
 - Safari 쿠키 파싱·주입, macOS launchd 주기 실행
 - **스택**: Python · Safari cookies · Telegram API · launchd
 - **🎓 배울 수 있는 것**: launchd 스케줄러 / 쿠키 공급·감시 역할 분리 구조
+
+### 책스타그램 일일 다이제스트 · `bookstagram`
+여러 책 사이트에서 글을 모아 매일 마크다운 요약본을 만드는 수집 봇.
+- 네이버 블로그·알라딘·레딧 4개 출처 수집, 중복 제거·출처별 분류
+- **스택**: Python 3 표준 라이브러리만 (urllib · xml.etree)
+- **🎓 배울 수 있는 것**: 여러 API·RSS 수집 패턴 / 의존성 없는 파이프라인
+
+### 로또 자동 구매 · `lotto`
+매주 토요일 아침 로또 6/45 자동 5게임을 알아서 구매하는 자동화 스크립트.
+- 잔액·중복 구매 확인 후 자동 구매, launchd + GitHub Actions 이중 실행
+- **스택**: Python · dhapi · launchd · GitHub Actions
+- **🎓 배울 수 있는 것**: 로컬·클라우드 스케줄러 겹치기 / 상태 확인으로 안전한 자동화
 
 ---
 
@@ -209,6 +275,18 @@ POS 카드정보 암호화 키관리 개선 제안서 (AWS KMS vs Vault).
 DuckDB로 노트북에서 dbt를 갖고 노는 데이터 파이프라인 놀이터.
 - 6개 도메인 seed→staging→mart, 다양한 데이터 소스, lineage 그래프
 - **🎓 배울 수 있는 것**: dbt 계층 설계 / 커스텀 테스트로 규칙 검증
+
+### Nimbo (리눅스 NAS 웹 콘솔) · `nimbo`
+리눅스 서버를 시놀로지 DSM처럼 관리하는 셀프호스팅 웹 콘솔.
+- 창·도크·⌘K 데스크톱형 UI에 19개 앱 — ZFS·SMART·백업·Docker·방화벽·2FA
+- **스택**: Next.js 16 · React 19 · Tailwind v4 · ghostty-web · systemd + Caddy
+- **🎓 배울 수 있는 것**: 웹앱이 실제 시스템 상태를 읽는 계층 설계 / '배포 가능한 제품' 만들기
+
+### Zen (홈 NAS 운영체제) · `zen`
+맥북에서 빌드해 USB로 굽는 FreeBSD 기반 커스텀 NAS 운영체제.
+- 읽기전용 루트 + A/B 업데이트 임베디드 OS, 파일 공유 6종, Go ZFS 관리 TUI
+- **스택**: FreeBSD 15/NanoBSD · ZFS · QEMU · Go + Bubble Tea
+- **🎓 배울 수 있는 것**: OS 이미지 조립·부팅 파이프라인 / Go TUI 관리 도구 만들기
 
 ---
 
