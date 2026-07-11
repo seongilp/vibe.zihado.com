@@ -290,7 +290,8 @@
             "브라우저 localStorage로 즐겨찾기 영속성 구현하기"
           ],
           "status": "prototype",
-          "live": null
+          "live": null,
+          "github": "https://github.com/seongilp/openmap"
         },
         {
           "slug": "meshscope",
@@ -318,7 +319,8 @@
             "지도·차트 전문 라이브러리를 React에 통합하기"
           ],
           "status": "working",
-          "live": null
+          "live": null,
+          "github": "https://github.com/seongilp/meshscope"
         },
         {
           "slug": "unflix",
@@ -565,7 +567,8 @@
             "macOS launchd 스케줄러로 주기 작업 돌리기",
             "쿠키 공급(로컬)과 감시(서버) 역할을 나눈 분산 구조"
           ],
-          "status": "working"
+          "status": "working",
+          "github": "https://github.com/seongilp/naver-alarm"
         },
         {
           "slug": "bookstagram-digest",
@@ -590,7 +593,8 @@
             "외부 의존성 없이 표준 라이브러리만으로 파이프라인 구성하기"
           ],
           "status": "working",
-          "live": null
+          "live": null,
+          "github": "https://github.com/seongilp/bookstagram"
         },
         {
           "slug": "lotto",
@@ -613,7 +617,8 @@
             "실행 전 상태 확인(잔액·중복)으로 안전한 자동화 만들기"
           ],
           "status": "working",
-          "live": null
+          "live": null,
+          "github": "https://github.com/seongilp/lotto"
         }
       ]
     },
@@ -646,7 +651,8 @@
             "복잡한 도메인 로직(학습 스케줄러)의 단위 테스트"
           ],
           "status": "working",
-          "live": "https://ankiyo.zihado.com"
+          "live": "https://ankiyo.zihado.com",
+          "github": "https://github.com/seongilp/ankiyo"
         },
         {
           "slug": "lumen",
@@ -693,7 +699,8 @@
             "비즈니스 로직을 Swift Package로 분리해 테스트하기"
           ],
           "status": "working",
-          "live": "https://rescenedev.github.io/watch-hira/"
+          "live": "https://rescenedev.github.io/watch-hira/",
+          "github": "https://github.com/rescenedev/watch-hira"
         }
       ]
     },
@@ -746,7 +753,8 @@
             "macOS 시스템 프로그래밍 (Spotlight 플러그인)",
             "ZIP·XML을 저수준에서 직접 파싱하기"
           ],
-          "status": "working"
+          "status": "working",
+          "github": "https://github.com/seongilp/hwpx-spotlight"
         },
         {
           "slug": "ev",
@@ -837,7 +845,8 @@
             "컨테이너 보안 (선언적 조립의 실제 효과)",
             "소프트웨어 서명과 검증"
           ],
-          "status": "working"
+          "status": "working",
+          "github": "https://github.com/seongilp/image-harden"
         },
         {
           "slug": "boundary",
@@ -861,7 +870,8 @@
             "GitOps로 접근제어를 선언적으로 관리하기",
             "zero-trust 인프라 전체 구성 흐름"
           ],
-          "status": "prototype"
+          "status": "prototype",
+          "github": "https://github.com/seongilp/boundary"
         },
         {
           "slug": "oy-guard",
@@ -883,7 +893,8 @@
             "비동기 작업 처리와 상태 관리 (백그라운드 큐)",
             "웹과 CLI가 같은 서비스 코드를 재사용하는 구조"
           ],
-          "status": "working"
+          "status": "working",
+          "github": "https://github.com/seongilp/oyguard"
         },
         {
           "slug": "oy-hack",
@@ -946,7 +957,8 @@
             "MCP 프로토콜과 클라이언트-서버 구조",
             "API 게이트웨이 패턴 (인증·라우팅·도구 화이트리스팅)"
           ],
-          "status": "working"
+          "status": "working",
+          "github": "https://github.com/seongilp/mcp-gateway"
         },
         {
           "slug": "dbt",
@@ -1024,7 +1036,8 @@
             "Go TUI 프레임워크로 위험 작업 확인까지 갖춘 관리 도구 만들기"
           ],
           "status": "working",
-          "live": null
+          "live": null,
+          "github": "https://github.com/seongilp/zen-nas"
         }
       ]
     }
