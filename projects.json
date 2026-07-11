@@ -35,7 +35,8 @@
             "3단 엣지 캐싱 (HTML → API → KV) 으로 빠르게 보여주기"
           ],
           "status": "working",
-          "live": "https://asm.zihado.com"
+          "live": "https://asm.zihado.com",
+          "github": "https://github.com/seongilp/assembly-watch"
         },
         {
           "slug": "dart",
@@ -108,7 +109,8 @@
             "Cloudflare Tunnel로 내 서버를 안전하게 전 세계에 연결하기"
           ],
           "status": "working",
-          "live": "https://law.zihado.com"
+          "live": "https://law.zihado.com",
+          "github": "https://github.com/legalize-kr/legalize-kr"
         },
         {
           "slug": "bookworm",
@@ -133,7 +135,8 @@
             "외부 도서 API 여러 개를 우선순위로 이어서 호출하기"
           ],
           "status": "working",
-          "live": "https://bookworm-bdt.pages.dev"
+          "live": "https://bookworm-bdt.pages.dev",
+          "github": "https://github.com/seongilp/bookworm"
         },
         {
           "slug": "landman",
@@ -157,7 +160,8 @@
             "k6로 성능(부하) 테스트 작성하기"
           ],
           "status": "prototype",
-          "live": "https://land.zihado.com"
+          "live": "https://land.zihado.com",
+          "github": "https://github.com/rescenedev/land.zihado.com"
         },
         {
           "slug": "yaho",
@@ -206,7 +210,8 @@
             "빌드 없이 PWA로 설치형 웹앱 만들기 (manifest + service worker)"
           ],
           "status": "working",
-          "live": "https://webgl-tour.pages.dev"
+          "live": "https://webgl-tour.pages.dev",
+          "github": "https://github.com/seongilp/webgl-tour"
         },
         {
           "slug": "webgl-demos",
@@ -230,7 +235,8 @@
             "GPU 텍스처 핑퐁 같은 실시간 렌더링 최적화 기법 익히기"
           ],
           "status": "working",
-          "live": "https://seongilp.github.io/particla/"
+          "live": "https://seongilp.github.io/particla/",
+          "github": "https://github.com/seongilp/particla"
         },
         {
           "slug": "worldcup-2026",
@@ -256,7 +262,8 @@
             "복잡한 스포츠 데이터 구조를 타입으로 깔끔하게 관리하기"
           ],
           "status": "working",
-          "live": "https://seongilp.github.io/worldcup-2026/"
+          "live": "https://seongilp.github.io/worldcup-2026/",
+          "github": "https://github.com/seongilp/worldcup-2026"
         },
         {
           "slug": "openmap-kr",
@@ -362,7 +369,8 @@
             "서버 없이 개인정보가 안전한 로컬 퍼스트 도구 만들기"
           ],
           "status": "working",
-          "live": "https://seongilp.github.io/weblog/"
+          "live": "https://seongilp.github.io/weblog/",
+          "github": "https://github.com/seongilp/weblog"
         },
         {
           "slug": "web-lumen",
@@ -389,7 +397,8 @@
             "Web Worker 풀로 CPU 코어를 전부 쓰는 병렬 처리 패턴"
           ],
           "status": "working",
-          "live": "https://seongilp.github.io/web-lumen/"
+          "live": "https://seongilp.github.io/web-lumen/",
+          "github": "https://github.com/seongilp/web-lumen"
         },
         {
           "slug": "pixi-particles",
@@ -412,7 +421,8 @@
             "상수를 코드에서 분리해 실험하기 좋은 구조 만들기"
           ],
           "status": "working",
-          "live": "https://seongilp.github.io/pixi-particle-playground/"
+          "live": "https://seongilp.github.io/pixi-particle-playground/",
+          "github": "https://github.com/seongilp/pixi-particle-playground"
         }
       ]
     },
@@ -659,7 +669,8 @@
             "대규모 미디어에서 제스처 UX와 성능 최적화"
           ],
           "status": "working",
-          "live": "https://github.com/rescenedev/lumen-ios"
+          "live": null,
+          "github": "https://github.com/rescenedev/lumen-ios"
         },
         {
           "slug": "watch",
@@ -712,7 +723,8 @@
             "macOS 네이티브 UI 패턴과 Homebrew 배포·코드서명"
           ],
           "status": "working",
-          "live": "https://github.com/rescenedev/anf"
+          "live": null,
+          "github": "https://github.com/rescenedev/anf"
         },
         {
           "slug": "hwpx",
@@ -759,7 +771,8 @@
             "Homebrew tap으로 도구 배포하기"
           ],
           "status": "working",
-          "live": "https://github.com/rescenedev/ev"
+          "live": null,
+          "github": "https://github.com/rescenedev/ev"
         }
       ]
     },
@@ -792,7 +805,8 @@
             "OAuth2 인증과 토큰 캐싱"
           ],
           "status": "working",
-          "live": "https://pypi.org/project/tossinvest-cli/"
+          "live": "https://pypi.org/project/tossinvest-cli/",
+          "github": "https://github.com/rescenedev/tossinvest-cli"
         }
       ]
     },
@@ -956,7 +970,8 @@
             "커스텀 테스트로 비즈니스 규칙 검증하기"
           ],
           "status": "working",
-          "live": "https://github.com/seongilp/dbt-playground"
+          "live": null,
+          "github": "https://github.com/seongilp/dbt-playground"
         },
         {
           "slug": "nimbo",
@@ -983,7 +998,8 @@
             "인증·보안(세션·브루트포스 방어)을 테스트로 지키는 법"
           ],
           "status": "working",
-          "live": "https://seongilp.github.io/nimbo/"
+          "live": "https://seongilp.github.io/nimbo/",
+          "github": "https://github.com/seongilp/nimbo"
         },
         {
           "slug": "zen",

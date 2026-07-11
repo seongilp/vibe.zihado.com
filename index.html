@@ -113,6 +113,10 @@
   .v-amber .dot{background:var(--amber)} .v-amber .does li::before{background:var(--amber)}
   .v-amber .learn li::before{color:var(--amber-d)} .v-amber .live{background:var(--amber-d)}
 
+  /* github link button — always dark regardless of variant */
+  .card .live.gh{background:#24292f}
+  .live.gh::before{content:"⎇ "}
+
   /* ---------- LESSONS (dark color block) ---------- */
   .lessons{background:var(--fg);color:#fff;padding:72px 0;margin-top:72px}
   .lessons h2{font-size:clamp(1.9rem,5vw,3rem);text-align:center}
@@ -431,6 +435,7 @@ function card(p, variant, idx){
   const foot = el('div','card-foot');
   foot.appendChild(el('span','status '+(p.status||'working'), STATUS_LABEL[p.status]||p.status));
   if(p.live){ const a=el('a','live', p.live.replace(/^https?:\/\//,'')); a.href=p.live; a.target='_blank'; a.rel='noopener'; foot.appendChild(a); }
+  if(p.github){ const g=el('a','live gh','GitHub'); g.href=p.github; g.target='_blank'; g.rel='noopener'; foot.appendChild(g); }
   c.appendChild(foot);
   return c;
 }

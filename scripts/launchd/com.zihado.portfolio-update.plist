@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.zihado.portfolio-update</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>/Users/zihado/work/playground/vibe-coding/scripts/auto-update.sh</string>
+  </array>
+
+  <!-- 매주 일요일 21:00 (KST, 로컬 시간) -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key>
+    <integer>0</integer>
+    <key>Hour</key>
+    <integer>21</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/zihado/Library/Logs/portfolio-update.launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/zihado/Library/Logs/portfolio-update.launchd.log</string>
+</dict>
+</plist>
