@@ -1,7 +1,8 @@
 #!/bin/zsh
 # 포트폴리오(vibe.zihado.com) 자동 업데이트
 # launchd(com.zihado.portfolio-update)가 매주 일요일 21:00 KST에 실행.
-# ~/work/playground의 새 디렉토리를 headless Claude가 조사해 쇼케이스에 추가한다.
+# ~/work/playground의 새 디렉토리를 headless Claude가 조사해 쇼케이스에 추가하고,
+# 결과를 텔레그램으로 알린다 (~/.env의 TELEGRAM_BOT_TOKEN / AUTHORIZED_CHAT_ID 사용).
 set -euo pipefail
 
 REPO="$HOME/work/playground/vibe-coding"
@@ -10,29 +11,58 @@ LOG="$LOG_DIR/portfolio-update.log"
 CLAUDE="$HOME/.local/bin/claude"
 export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 
+# 텔레그램 자격증명 — 공개 저장소이므로 절대 커밋하지 말고 ~/.env에서만 읽는다
+[[ -f "$HOME/.env" ]] && source "$HOME/.env"
+
+notify() {
+  local text="$1"
+  if [[ -z "${TELEGRAM_BOT_TOKEN:-}" || -z "${AUTHORIZED_CHAT_ID:-}" ]]; then
+    echo "WARN: 텔레그램 설정 없음 — 알림 생략"
+    return 0
+  fi
+  curl -s -o /dev/null --max-time 15 \
+    "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+    -d chat_id="${AUTHORIZED_CHAT_ID}" \
+    --data-urlencode text="$text" \
+    -d disable_web_page_preview=true || echo "WARN: 텔레그램 전송 실패"
+}
+
 mkdir -p "$LOG_DIR"
-{
-  echo "===== $(date '+%Y-%m-%d %H:%M:%S') portfolio auto-update start ====="
+exec >>"$LOG" 2>&1
 
-  if [[ ! -x "$CLAUDE" ]]; then
-    echo "ERROR: claude CLI not found at $CLAUDE"
-    exit 1
-  fi
+echo "===== $(date '+%Y-%m-%d %H:%M:%S') portfolio auto-update start ====="
 
-  cd "$REPO"
+# set -e로 죽는 모든 실패에서 텔레그램 알림
+trap 'notify "🔴 포트폴리오 자동 업데이트 실패 — 로그: ~/Library/Logs/portfolio-update.log"' ERR
 
-  # 사용자가 작업 중인 변경사항이 있으면 건드리지 않고 이번 주기는 건너뛴다
-  if [[ -n "$(git status --porcelain)" ]]; then
-    echo "SKIP: 워킹 트리에 커밋 안 된 변경사항이 있어 이번 실행을 건너뜁니다."
-    exit 0
-  fi
+if [[ ! -x "$CLAUDE" ]]; then
+  echo "ERROR: claude CLI not found at $CLAUDE"
+  notify "🔴 포트폴리오 자동 업데이트 실패 — claude CLI를 찾을 수 없음 ($CLAUDE)"
+  exit 1
+fi
 
-  git pull --rebase origin main
+cd "$REPO"
 
-  "$CLAUDE" -p "$(cat scripts/update-prompt.md)" \
-    --model claude-sonnet-5 \
-    --allowed-tools "Read,Write,Edit,Glob,Grep,Bash" \
-    --max-turns 100
+# 사용자가 작업 중인 변경사항이 있으면 건드리지 않고 이번 주기는 건너뛴다
+if [[ -n "$(git status --porcelain)" ]]; then
+  echo "SKIP: 워킹 트리에 커밋 안 된 변경사항이 있어 이번 실행을 건너뜁니다."
+  notify "🟡 포트폴리오 자동 업데이트 건너뜀 — vibe-coding 저장소에 커밋 안 된 변경사항이 있어요. 정리 후 다음 주기에 다시 시도합니다."
+  exit 0
+fi
 
-  echo "===== $(date '+%Y-%m-%d %H:%M:%S') done ====="
-} >>"$LOG" 2>&1
+git pull --rebase origin main
+
+RESULT=$("$CLAUDE" -p "$(cat scripts/update-prompt.md)" \
+  --model claude-sonnet-5 \
+  --allowed-tools "Read,Write,Edit,Glob,Grep,Bash" \
+  --max-turns 100)
+echo "$RESULT"
+
+SUMMARY=$(echo "$RESULT" | tail -n 12)
+notify "🟢 포트폴리오 자동 업데이트 완료
+
+${SUMMARY}
+
+https://vibe.zihado.com"
+
+echo "===== $(date '+%Y-%m-%d %H:%M:%S') done ====="
