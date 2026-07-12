@@ -1,7 +1,7 @@
 {
   "_readme": "~/work/playground 하위 디렉토리 추적 파일. 포트폴리오 업데이트 시 실제 디렉토리 목록과 이 파일을 비교해서, 여기 없는 새 디렉토리만 조사해 projects.json에 추가하고 이 파일을 갱신한다. status: showcased(쇼케이스 등록됨, slug는 projects.json의 slug) / excluded(사용자가 제외 지시) / skipped(등록 가치 없음, reason 참고).",
   "playgroundPath": "~/work/playground",
-  "lastScanned": "2026-07-11",
+  "lastScanned": "2026-07-12",
   "directories": {
     "ankiyo": { "status": "showcased", "slug": "ankiyo" },
     "app_in_toss": { "status": "skipped", "reason": "토스 앱 예제·실험 모음 (완결된 프로젝트 아님)" },
@@ -15,6 +15,7 @@
     "dbt-playground-repo": { "status": "showcased", "slug": "dbt" },
     "etf-doctor": { "status": "showcased", "slug": "etf-doctor" },
     "heeppeu_": { "status": "excluded", "reason": "사용자 지시로 제외 (2026-07-11, 개인용 도구)" },
+    "heltec": { "status": "showcased", "slug": "meshkr-viewer", "note": "실제 프로젝트는 heltec/meshkr-viewer" },
     "hwpx": { "status": "showcased", "slug": "hwpx" },
     "image-harden": { "status": "showcased", "slug": "image-harden" },
     "investment": { "status": "skipped", "reason": "개인 투자 기록 마크다운 문서 모음" },

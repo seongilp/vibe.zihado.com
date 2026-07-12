@@ -425,6 +425,32 @@
           "status": "working",
           "live": "https://seongilp.github.io/pixi-particle-playground/",
           "github": "https://github.com/seongilp/pixi-particle-playground"
+        },
+        {
+          "slug": "meshkr-viewer",
+          "name": "MeshKR 뷰어 (메시 네트워크 채팅뷰어)",
+          "folder": "heltec/meshkr-viewer",
+          "oneLiner": "Meshtastic 메시 네트워크 트래픽을 Discord 스타일 채팅으로 실시간 구경하는 단일 파일 뷰어",
+          "does": [
+            "공용 MQTT 브로커를 구독해 KR/US/EU_868/TW/JP 지역 트래픽을 탭으로 전환하며 확인",
+            "패킷을 복호화해 텍스트 메시지는 채팅 말풍선으로, 위치·텔레메트리·노드 정보는 이벤트 라인으로 표시",
+            "여러 게이트웨이가 중복 업링크한 패킷을 packet id 기준으로 한 번만 표시"
+          ],
+          "stack": [
+            "Python (stdlib http.server)",
+            "paho-mqtt",
+            "Meshtastic Protobuf",
+            "AES128-CTR",
+            "uv (인라인 의존성 스크립트)"
+          ],
+          "learn": [
+            "외부 의존성 설치 없이 uv 스크립트 하나로 실행되는 도구 만들기",
+            "MQTT 구독 + 암호화 페이로드 복호화 파이프라인 설계",
+            "패킷 중복 제거(dedup)로 노이즈 많은 실시간 피드 정리하기"
+          ],
+          "status": "working",
+          "live": null,
+          "github": null
         }
       ]
     },
