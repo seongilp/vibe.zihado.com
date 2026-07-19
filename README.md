@@ -52,17 +52,18 @@ python3 -m http.server 8799     # 또는: npx serve
 
 ## Cloudflare Pages 배포
 
-빌드가 필요 없는 정적 사이트라 그대로 올리면 됩니다.
+Pages 프로젝트 `vibe-zihado-com`이 GitHub 저장소
+(`seongilp/vibe.zihado.com`)와 **git 연동**되어 있어, 푸시하면 자동 배포됩니다.
 
 ```bash
-# 프로덕션(main) 배포
-npx wrangler pages deploy . --project-name vibe-coding --branch main
+# 프로덕션 배포 = main에 푸시
+git push origin main
 
-# 다른 테마를 프리뷰로 배포
-npx wrangler pages deploy . --project-name vibe-coding --branch new-theme
+# 다른 테마 브랜치를 푸시하면 프리뷰 배포가 생성됨
+git push origin new-theme
 ```
 
-최초 1회 `npx wrangler login`으로 Cloudflare 계정 인증이 필요합니다.
+`wrangler pages deploy` 직접 업로드는 git 연동 프로젝트라 사용하지 않습니다.
 커스텀 도메인(`vibe.zihado.com`)은 Cloudflare 대시보드 → Pages → Custom domains에서 연결돼 있습니다.
 
 ## 라이선스 / 출처
