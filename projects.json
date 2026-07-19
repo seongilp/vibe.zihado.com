@@ -451,6 +451,57 @@
           "status": "working",
           "live": null,
           "github": null
+        },
+        {
+          "slug": "ive-hub",
+          "name": "IVE 팬덤 허브 (라이브챗·리스크·피드)",
+          "folder": "ive.unflix.tv",
+          "oneLiner": "유튜브 댓글 라이브챗부터 커뮤니티 피드 수집, OSINT 스타일 리스크 인텔리전스까지 갖춘 K-pop 그룹 전용 대시보드",
+          "does": [
+            "유튜브 채널 댓글을 페이지네이션해 실시간 라이브 채팅처럼 재생 (속도·정렬·시어터 모드)",
+            "네이버뉴스·디시인사이드·인스타그램·다음·네이트판 등 이종 커뮤니티 소스를 한 곳에 모으는 피드 애그리게이터",
+            "멤버별 감정·키워드 분석과 Executive Summary·워드클라우드를 갖춘 리스크 인텔리전스 뷰"
+          ],
+          "stack": [
+            "Next.js 16",
+            "React 19",
+            "Cloudflare Workers/KV (OpenNext)",
+            "Vitest",
+            "YouTube Data API"
+          ],
+          "learn": [
+            "뉴스·커뮤니티·SNS처럼 이종 소스를 하나의 피드로 합치는 애그리게이터 설계",
+            "어댑터별 실패를 격리하는 테스트로 깨지기 쉬운 외부 스크레이핑 안정화하기"
+          ],
+          "status": "working",
+          "live": "https://ive.zihado.workers.dev",
+          "github": "https://github.com/seongilp/ive.unflix.tv"
+        },
+        {
+          "slug": "trajectory",
+          "name": "궤적. (구글 타임라인 뷰어)",
+          "folder": "google/gps",
+          "oneLiner": "구글 타임라인/Takeout 위치 데이터를 서버 전송 없이 브라우저에서만 파싱해 지도로 보여주는 개인 위치 기록 뷰어",
+          "does": [
+            "Android/iOS 신형 타임라인 JSON부터 구형 Takeout 시맨틱 기록까지 4가지 형식을 내용 기반으로 자동 감지·파싱",
+            "Takeout ZIP을 압축 해제 없이 그대로 드래그해도 파싱, IndexedDB에 날짜별로 저장해 새로고침해도 유지",
+            "이동 경로·방문 장소를 지도+시간순 리스트로, 저장 장소·리뷰는 검색 가능한 마커 목록으로 표시"
+          ],
+          "stack": [
+            "Next.js 16",
+            "TypeScript",
+            "Leaflet",
+            "Dexie (IndexedDB)",
+            "fflate",
+            "Vitest"
+          ],
+          "learn": [
+            "파일 내용 기반으로 여러 데이터 포맷을 방어적으로 감지·파싱하는 전략",
+            "서버 없이 브라우저(IndexedDB)만으로 대용량 개인 데이터를 다루는 로컬 퍼스트 설계"
+          ],
+          "status": "prototype",
+          "live": null,
+          "github": null
         }
       ]
     },
